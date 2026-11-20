@@ -31,43 +31,43 @@
 
 * **Ver el título y la duración de todas las películas.**
 
-  *SELECT* Nombre\_Pelicula, Duracion *FROM* Pelicula; 
+		*SELECT* Nombre_Pelicula, Duracion *FROM* Pelicula; 
 
-  *ORDEN BY* Duracion ASC; 
+		*ORDEN BY* Duracion ASC; 
 
   Nota: En lugar de traer todas las columnas con *SELECT \** elegimos mostrar únicamente los nombres de las películas y cuánto duran en minutos. 
 
 
 * **Buscar una película por su año de estreno.**
 
-  *SELECT* Nombre\_Pelicula, Anio\_Estreno *FROM* Pelicula 
+		*SELECT* Nombre_Pelicula, Anio_Estreno *FROM* Pelicula 
 
-  *WHERE* Anio\_Estreno \= 2018;
+		*WHERE* Anio_Estreno= 2018;
 
   Nota: El *WHERE* funciona como un filtro. Aca solo nos va devolver lo que le pedimos exactamente, en este caso, que sean solo de ese año.
 
 
 * **Mostrar cada película junto con su género.**
 
-  *SELECT* Pelicula.Nombre\_Pelicula, Genero.Tipo\_Genero *FROM* Pelicula 
+		*SELECT* Pelicula.Nombre_Pelicula, Genero.Tipo_Genero *FROM* Pelicula 
 
-  *INNERJOIN* Genero *ON* Pelicula.ID\_GENERO 
+		*INNERJOIN* Genero *ON* Pelicula.ID_GENERO 
 
-  \= Genero.ID\_GENERO
+		=Genero.ID_GENERO
 
 		*GRUPO BY* Pelicula;  
 Nota: El *INNERJOIN* une dos tablas distintas. El *ON* sirve para coincidir los registros de una tabla con los de la otra. GROUP BY agrupa el resultado en una tabla.
 
 * **Contar cuántas entradas se vendieron en total.**
 
-  *SELECT COUNT(*ID\_ENTRADA*)* *AS* Total\_Vendidas *FROM* Entrada; 
+		*SELECT COUNT(*ID_ENTRADA*)* *AS* Total_Vendidas *FROM* Entrada; 
 
   Nota: El *COUNT* cuenta la cantidad de filas registradas en esa columna. El *`AS`* le pone un nombre más claro al resultado en pantalla. 
 
 
 * **Sumar todo el dinero recaudado por entradas.**
 
-  *SELECT SUM(*Precio\_Cobrado*) AS* Dinero\_Total *FROM* Entrada; 
+		*SELECT SUM(*Precio_Cobrado*) AS* Dinero_Total *FROM* Entrada; 
 
   Nota: El *SUM* suma todos los valores numéricos de la columna de precios para dar el total recaudado.
 
@@ -75,6 +75,6 @@ Nota: El *INNERJOIN* une dos tablas distintas. El *ON* sirve para coincidir los 
 
 * **Eliminar una función.**
 
-  *DELETE FROM* Funcion 
+		*DELETE FROM* Funcion 
 
-  *WHERE* ID\_FUNCION \= 5;
+		*WHERE* ID\_FUNCION \= 5;
