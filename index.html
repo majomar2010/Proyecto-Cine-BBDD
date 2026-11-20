@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Rio Cinemas</title>
+    <title>Velvet Screen | Cine Argentino</title>
 </head>
 
 <body>
     <div class="cabecera">
         <div class="anchocabecera">
             <div class="imagen-principal">
-                <img class="logo" src="/img/logo.png">
+                <img class="logo" src="img/logo.png" alt="Velvet Screen">
             </div>
             <div class="buscador">
                 <select>
@@ -20,148 +20,132 @@
                     <option>Gem Plaza (Monterrey, NL)</option>
                     <option>Alameda (Saltillo, Coah.)</option>
                 </select>
-                <input type="button" value="Ver cartelera" onclick="before">
+                <input type="button" value="Ver cartelera" onclick="location.href='Cartelera.html'">
             </div>
             <div class="contacto">
                 <input type="button" value="Contacto">
             </div>
         </div>
     </div>
+
     <nav class="navegador">
         <div class="anchonavegador">
             <ul>
-                <li>
-                    <a href="">Inicio</a>
-                </li>
-                <li>
-                    <a href="">Cartelera</a>
-                </li>
-                <li>
-                    <a href="">Estrenos</a>
-                </li>
-                <li>
-                    <a href="">Próximos estrenos</a>
-                </li>
-                <li>
-                    <a href="">Eventos/Fiestas</a>
-                </li>
-                <li>
-                    <a href="">Galería</a>
-                </li>
-            </ul>
-            <ul>
-
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Cartelera.html">Cartelera</a></li>
+                <li><a href="#peliculas">Estrenos</a></li>
+                <li><a href="#peliculas">Próximos estrenos</a></li>
+                <li><a href="#">Eventos/Fiestas</a></li>
+                <li><a href="#">Galería</a></li>
             </ul>
         </div>
     </nav>
+
     <div class="imagen-slider">
         <div id="banners">
-            <img class="imagenes-banners" src="img/angrybirds.png">
-
-
+            <img class="imagenes-banners" src="img/El niño pez.jpg" alt="Destacada">
         </div>
         <div class="botonesSigAnt">
-            <button class="b-anterior" onclick="beforeImage()">-</button>
-            <button class="b-siguiente" onclick="nextImage()">+</button>
+            <button class="b-anterior" onclick="beforeImage()">❮</button>
+            <button class="b-siguiente" onclick="nextImage()">❯</button>
         </div>
         <script>
-
-            var image = ["El niño pez", "La cienaga", "Wakolda.", "Tan de repente", "El angel", "La niña santa"];
-
-            var i = image.length;
+            var slider_content = document.getElementById('banners');
+            var image = [
+                "El niño pez.jpg",
+                "Silvia Prieto.jpg",
+                "Wakolda.jpg",
+                "Tan de repente.jpg",
+                "El angel.jpg",
+                "La niña santa.jpg"
+            ];
+            var i = 0;
 
             function nextImage() {
-                if (i < image.length) {
-                    i = i + 1;
-                    if (i == image.length) {
-                        i = 1;
-                    }
-                } else {
-                    i = 1;
-                }
-                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=\"img/" + image[i] + ".jpg\">";
+                i = (i + 1) % image.length;
+                slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
             }
 
             function beforeImage() {
-                if (i < image.length + 1 && i > 1) {
-                    i = i - 1;
-                } else {
-                    i = image.length;
-                }
-                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=img/" + image[i - 1] + ".png>";
+                i = (i - 1 + image.length) % image.length;
+                slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
             }
         </script>
     </div>
 
-
-    <div class="peliculas">
-        <h2>Películas</h2>
+    <div class="peliculas" id="peliculas">
+        <h2>Películas en Cartelera</h2>
         <div class="listapeliculas">
             <div class="pelicula-info">
-                <img src="img/El niño pez.jpg">
+                <img src="img/El niño pez.jpg" alt="El niño pez">
                 <p>El niño pez</p>
-                <p>Año de estreno: 09/04/2009</p> 
-                <p>Duración: 1hs y 36min </p>
+                <p>Año de estreno: 09/04/2009</p>
+                <p>Duración: 1hs y 36min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Cine romántico, LGBT, Documental, Suspenso, Drama, Melodrama, Policial, Cine mundial </p>
-                <p>Calificacion:+16 años</p>
-                <p>Pais de Origen: Argentina, Francia y España</p>
+                <p>Género: Cine romántico, LGBT, Drama, Suspenso, Policial</p>
+                <p>Calificación: +16 años</p>
+                <p>País de Origen: Argentina, Francia y España</p>
             </div>
+
             <div class="pelicula-info">
-                <img src="img/La cienaga.jpg">
-                <p>La cienaga</p>
-                <p>Año de estreno: 12/04/2001</p> 
-                <p>Duración: 1hs y 43min </p>
+                <img src="img/Silvia Prieto.jpg" alt="Silvia Prieto">
+                <p>Silvia Prieto</p>
+                <p>Año de estreno: 27/05/1999</p>
+                <p>Duración: 1hs y 32min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Acción, Comedia cinematográfica, Cine independiente, Drama, Comedia negra, Comedia dramatica</p>
-                <p>Calificacion:+13 años</p>
-                <p>Pais de Origen: Argentina, España y Francia</p>
+                <p>Género: Comedia dramática, Cine independiente</p>
+                <p>Calificación: +13 años</p>
+                <p>País de Origen: Argentina</p>
             </div>
+
             <div class="pelicula-info">
-                <img src="img/Wakolda.jpg">
+                <img src="img/Wakolda.jpg" alt="Wakolda">
                 <p>Wakolda</p>
-               <p>Año de estreno: 19/09/2013</p> 
-                <p>Duración: 1hs y 33min </p>
+                <p>Año de estreno: 19/09/2013</p>
+                <p>Duración: 1hs y 33min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Drama/ Thriller historico</p>
-                <p>Calificacion:+13 años</p>
-                <p>Pais de Origen: Argentina y España</p>
+                <p>Género: Drama, Thriller histórico</p>
+                <p>Calificación: +13 años</p>
+                <p>País de Origen: Argentina y España</p>
             </div>
+
             <div class="pelicula-info">
-                <img src="img/Tan de repente.jpg">
+                <img src="img/Tan de repente.jpg" alt="Tan de repente">
                 <p>Tan de repente</p>
-               <p>Año de estreno: 19/06/2003</p> 
-                <p>Duración: 1hs y 30min </p>
+                <p>Año de estreno: 19/06/2003</p>
+                <p>Duración: 1hs y 30min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Comedia dramatica, Drama y Cine independiente</p>
-                <p>Calificacion:+16 años</p>
-                <p>Pais de Origen: Argentina</p>
+                <p>Género: Comedia dramática, Drama, Cine independiente</p>
+                <p>Calificación: +16 años</p>
+                <p>País de Origen: Argentina</p>
             </div>
+
             <div class="pelicula-info">
-                <img src="img/El angel.jpg">
-                <p>El angel </p>
-                <p>Año de estreno: 12/04/2001</p> 
-                <p>Duración: 1hs y58min </p>
+                <img src="img/El angel.jpg" alt="El ángel">
+                <p>El ángel</p>
+                <p>Año de estreno: 09/08/2018</p>
+                <p>Duración: 1hs y 58min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Crimen, Drama, Biografía, Thriller y Humor negro</p>
-                <p>Calificacion:+16 años</p>
-                <p>Pais de Origen: Argentina</p>
+                <p>Género: Crimen, Drama, Biografía, Thriller</p>
+                <p>Calificación: +16 años</p>
+                <p>País de Origen: Argentina y España</p>
             </div>
+
             <div class="pelicula-info">
-                <img src="img/La niña santa.jpg">
+                <img src="img/La niña santa.jpg" alt="La niña santa">
                 <p>La niña santa</p>
-               <p>Año de estreno: 06/05/2004</p> 
-                <p>Duración: 1hs y 46min </p>
+                <p>Año de estreno: 06/05/2004</p>
+                <p>Duración: 1hs y 46min</p>
                 <p>Fecha de Ingreso: 11/11/2026</p>
                 <p>Disponible: Si</p>
-                <p>Genero: Drama psicológico, Con elementos de ficción, Coming-of-age y Toques de thriller psicológico y Comedia </p>
-                <p>Calificacion:+14 años</p>
-                <p>Pais de Origen: Argentina, España e Italia</p>
+                <p>Género: Drama psicológico, Coming-of-age, Comedia</p>
+                <p>Calificación: +14 años</p>
+                <p>País de Origen: Argentina, España e Italia</p>
             </div>
         </div>
     </div>
@@ -169,33 +153,28 @@
     <div class="pie">
         <div class="pie-padre">
             <div class="pie-izquierda">
-                <h2>Rio Cinemas</h2>
-                <p>Proyecto desarrollado por André Ibarra Pérez</p>
+                <h2>Velvet Screen</h2>
+                <p>Proyecto de Base de Datos - Cine</p>
             </div>
             <div class="pie-centro">
-
             </div>
             <div class="pie-derecha">
-                <h3>Siguenos</h3>
+                <h3>Síguenos</h3>
                 <ul>
-                    <li>
-                        <a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a>
-                    </li>
-                    <li>
-                        <a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a>
-                    </li>
-                    <li>
-                        <a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a>
-                    </li>
+                    <li><a href="#"><img src="img/icons/Facebook_16px.png" alt="Facebook"> Facebook</a></li>
+                    <li><a href="#"><img src="img/icons/Instagram_16px.png" alt="Instagram"> Instagram</a></li>
+                    <li><a href="#"><img src="img/icons/Twitter_16px.png" alt="Twitter"> Twitter</a></li>
                 </ul>
-
-
-
             </div>
         </div>
-
     </div>
+
     <script>
+        setInterval(nextImage, 3500);
+    </script>
+</body>
+
+</html>
         setInterval('nextImage()', 3000);
     </script>
 </body>
