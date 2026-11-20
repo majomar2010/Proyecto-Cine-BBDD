@@ -1,26 +1,31 @@
 var slider_content = document.getElementById('banners');
 
-var image = ["angrybirds", "comosifueralaprimeravez", "habiaunavezenhollywood", "historiasmiedo", "it"];
+var image = [
+    "El niño pez.jpg",
+    "Silvia Prieto.jpg",
+    "Wakolda.jpg",
+    "Tan de repente.jpg",
+    "El angel.jpg",
+    "La niña santa.jpg"
+];
 
-var i = image.length;
+var i = 0;
 
 function nextImage() {
-    if (i < image.length) {
-        i = i + 1;
-        if (i == image.length) {
-            i = 0;
-        }
-    } else {
-        i = 0;
+    if (slider_content) {
+        i = (i + 1) % image.length;
+        slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
     }
-    slider_content.innerHTML = "<img src=img/banners/" + image[i] + ".png>";
 }
 
 function beforeImage() {
-    if (i < image.length + 1 && i > 1) {
-        i = i - 1;
-    } else {
-        i = image.length;
+    if (slider_content) {
+        i = (i - 1 + image.length) % image.length;
+        slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
     }
-    slider_content.innerHTML = "<img src=img/banners/" + image[i - 1] + ".png>";
+}
+
+// Avance automático cada 3.5 segundos si existe el slider en la página
+if (slider_content) {
+    setInterval(nextImage, 3500);
 }
