@@ -66,22 +66,22 @@
 
 [**6\. Documentación Final y Producto**](#6.-documentación-final-y-producto)
 
-# **1\. Investigación Inicial y Marco Teórico** {#1.-investigación-inicial-y-marco-teórico}
+# **1\. Investigación Inicial y Marco Teórico** 
 
-## **1.1 Funcionamiento General de un Complejo de Cines** {#1.1-funcionamiento-general-de-un-complejo-de-cines}
+## **1.1 Funcionamiento General de un Complejo de Cines** 
 
 Nuestro proyecto consiste en la organización y el diseño de un sistema de gestión de ventas y reservas de entradas para un complejo de cines.
 
 Un complejo de cines está integrado por varios cines ubicados principalmente en los centros comerciales de la ciudad. Cada cine cuenta con una cantidad de salas que exhiben las películas en distintas funciones cinematográficas. Estas salas pueden tener diferentes capacidades, según la cantidad de butacas disponibles. El sistema permite organizar y administrar la información de los distintos cines de forma centralizada. para esto, se tiene en cuenta la programación de las salas, que se renueva semanalmente y determina qué películas van a proyectarse y los horarios de cada función.  
 La programación se realiza tomando como base la información de las próximas películas a estrenar que envía el incaa (instituto nacional de cine y artes audiovisuales). A partir de estos datos, se organizan las funciones y sus horarios con anticipación, y se habilita la venta y reserva de entradas para cada una.
 
-## **1.2 El Rol del INCAA en la Industria Cinematográfica**  {#1.2-el-rol-del-incaa-en-la-industria-cinematográfica}
+## **1.2 El Rol del INCAA en la Industria Cinematográfica**  
 
 El instituto nacional de cine y artes audiovisuales (*INCAA*) es el encargado de regular la actividad cinematográfica en el país. En el funcionamiento del complejo de cines, actúa como proveedor oficial de información sobre las películas que próximamente se van a estrenar.
 
 Cada semana, el INCAA envía el catálogo oficial de los títulos a estrenar. para que una película pueda ser programada en las salas del complejo, es necesario registrar su ficha técnica completa, que incluye el nombre oficial, el título original, la duración, el género, el país de origen, el elenco principal y la clasificación por edades
 
-## **1.3 Clasificación por Edades y Regulaciones**  {#1.3-clasificación-por-edades-y-regulaciones}
+## **1.3 Clasificación por Edades y Regulaciones**  
 
 El marco legal regulado por la Ley de Cine N° 17.741 establece que toda exhibición pública de películas debe contar con una calificación de edad visible para el espectador. Las categorías oficiales comprenden: Aptas para todo público (con o sin reservas). 
 
@@ -90,7 +90,7 @@ Esta normativa impone dos obligaciones clave al sistema de gestión:
 1. **Visibilidad**: La calificación asignada por el INCAA debe figurar impreso en el ticket emitido y proyectarse en la pantalla de la sala previa al inicio del film.  
 2. **Restricción de Venta**: El sistema debe impedir la venta de tarifas o entradas no permitidas según la edad del espectador (por ejemplo, bloquear categorías de venta para menores en funciones con clasificación \+16 o \+18).
 
-## **1.4. Normativa Fiscal de Facturación**  {#1.4.-normativa-fiscal-de-facturación}
+## **1.4. Normativa Fiscal de Facturación** 
 
 Además de cumplir con la legislación cinematográfica vigente, el sistema debe respetar la ley de facturación para la emisión de comprobantes comerciales. cada entrada impresa funciona como un comprobante de venta, por lo que debe incluir la información correspondiente a la operación realizada.  
 Para cumplir con esta reglamentación, el ticket emitido por la boletería debe contener los siguientes datos:
@@ -104,9 +104,9 @@ Para cumplir con esta reglamentación, el ticket emitido por la boletería debe 
 
   # 
 
-# **2\. Análisis de la Problemática** {#2.-análisis-de-la-problemática}
+# **2\. Análisis de la Problemática** 
 
-## **2.1 Identificación del Problema** {#2.1-identificación-del-problema}
+## **2.1 Identificación del Problema** 
 
 Actualmente, la gestión de un complejo de cines puede presentar distintas dificultades cuando la información de las salas, las funciones, las ventas y las reservas no se encuentra organizada en un mismo sistema. Esto puede generar errores en la administración del negocio y afectar tanto el control de las entradas como la atención a los clientes.
 
@@ -115,7 +115,7 @@ Actualmente, la gestión de un complejo de cines puede presentar distintas dific
 * **Errores en la información de los comprobantes de venta**: Las entradas deben incluir los datos correspondientes a la venta y a la función, como el número de venta, la fecha y hora, la sala, la película y su calificación por edades. Si se omite alguno de los datos exigidos por la normativa vigente, el complejo puede tener dificultades para cumplir con los requisitos legales.  
 * **Falta de control sobre las restricciones por edad**: Las funciones deben respetar la clasificación por edades de cada película. Si no se verifica qué tipos de entradas se permiten para cada función, pueden producirse errores al momento de vender entradas que no corresponden a la calificación de la película.
 
-## **2.2 Objetivo de la Problemática** {#2.2-objetivo-de-la-problemática}
+## **2.2 Objetivo de la Problemática** 
 
 El objetivo es diseñar un sistema de gestión y administración para un complejo de cines que permita organizar toda la información desde un mismo lugar; una página. El sistema busca facilitar la organización de la cartelera, la planificación de las funciones en las distintas salas y la administración de la venta y reserva de entradas.
 
@@ -127,7 +127,7 @@ A continuación, recalcamos los objetivos que se deben seguir en el proyecto:
 4. **Cumplimiento de las normas y control de las ventas**: Verificar que se respeten las restricciones de edad de cada película, calcular los precios de las entradas según el tipo de espectador y el horario de la función, y emitir los comprobantes de venta correspondientes, respetando las leyes vigentes.  
 5. **Diseño funcional**: Diseñar la estructura de la Base de Datos mediante los modelos *MER* y *DER*, organizar la información y las relaciones entre los datos, y crear los *scripts* necesarios para implementar la Base de Datos utilizando herramientas como *PHPMYADMIN* o *MYSQL*.\|
 
-## **2.3 Alcance del Proyecto (O.L.A. Dentro y Fuera de Alcance)**  {#2.3-alcance-del-proyecto-(o.l.a.-dentro-y-fuera-de-alcance)}
+## **2.3 Alcance del Proyecto (O.L.A. Dentro y Fuera de Alcance)**  
 
 | Dentro de Nuestro Alcance | Fuera de Nuestro Alcance |
 | :---- | :---- |
@@ -135,9 +135,9 @@ A continuación, recalcamos los objetivos que se deben seguir en el proyecto:
 
 # 
 
-# **3\. Especificaciones del Sistema** {#3.-especificaciones-del-sistema}
+# **3\. Especificaciones del Sistema** 
 
-## **3.1 Requerimientos Funcionales (RF)**  {#3.1-requerimientos-funcionales-(rf)}
+## **3.1 Requerimientos Funcionales (RF)** 
 
 | RF01  | Gestión de Películas  | Cargar, modificar y consultar las películas enviadas por el INCAA con todos sus datos técnicos.  |
 | :---- | :---- | :---- |
@@ -148,13 +148,13 @@ A continuación, recalcamos los objetivos que se deben seguir en el proyecto:
 | **RF06**  | Impresión de Tickets | Emitir e imprimir la entrada con los datos exigidos por la Ley de Facturación y Ley de Cine.  |
 | **RF07** | Control de Capacidad  | Verificar en tiempo real las butacas disponibles antes de confirmar ventas o reservas.  |
 
-## **3.2 Requerimientos No Funcionales (RNF)** {#3.2-requerimientos-no-funcionales-(rnf)}
+## **3.2 Requerimientos No Funcionales (RNF)** 
 
 | RNF01  | Seguridad | Cargar, modificar y consultar las películas enviadas por el *INCAA* con todos sus datos técnicos.  |
 | :---- | :---- | :---- |
 | **RNF02**  | Compatibilidad  | Funcionar correctamente en los programas usados. |
 
-## **3.3 Reglas de Negocio** {#3.3-reglas-de-negocio}
+## **3.3 Reglas de Negocio** 
 
 | RN01  | Se deben cumplir los requerimientos de *INCAA* para transmitir una película. |
 | :---- | :---- |
@@ -162,16 +162,16 @@ A continuación, recalcamos los objetivos que se deben seguir en el proyecto:
 | **RN03** | No se pueden emitir entradas si no cumplen los datos requeridos por la Ley de Facturación y de Cine. |
 | **RN04** | El sistema no permite emitir ventas o reservas que superen la capacidad total de la sala.  |
 
-# **4\. Análisis de Viabilidad** {#4.-análisis-de-viabilidad}
+# **4\. Análisis de Viabilidad** 
 
-## **4.1 Viabilidad del Proyecto** {#4.1-viabilidad-del-proyecto}
+## **4.1 Viabilidad del Proyecto** 
 
 El desarrollo del sistema de gestión para el complejo de cines es viable por las siguientes razones:
 
 * **Viabilidad técnica**: Para diseñar la base de datos, debemos crear las tablas y establecer las relaciones y restricciones. Las funciones principales, como la capacidad de las salas, los precios de las entradas y las restricciones por edad, pueden implementarse mediante *MYSQL*.  
 * **Viabilidad económica**: El costo del proyecto es cero, se utilizan programas/herramientas gratuitas, sin necesidad de comprar licencias, y son fáciles de ejecutar.
 
-## 	**4.2 Programadas Utilizados** {#4.2-programadas-utilizados}
+## 	**4.2 Programadas Utilizados** 
 
 1. **Sistema de gestión de bases de datos relacional (*MYSQL*):** Es un sistema que permite almacenar, organizar y consultar información mediante el lenguaje *SQL*. 
 
@@ -183,9 +183,9 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 
    # 
 
-# **5\. Diseño y Arquitectura** {#5.-diseño-y-arquitectura}
+# **5\. Diseño y Arquitectura** 
 
-## 	**5.1 Entidades y Atributos** {#5.1-entidades-y-atributos}
+## 	**5.1 Entidades y Atributos** 
 
 | Cine | ID\_CINE (PK), nombre\_cine, dirección | Guarda los datos básicos de cada sede del complejo y el precio base general de la entrada.  |
 | :---- | :---- | :---- |
@@ -201,14 +201,14 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 | **Funcion** | ID\_FUNCION (PK), ID\_PROGRAMACION (FK), ID\_CINE (FK), ID\_PELICULA (FK), ID\_SALA (FK), dia\_semana, hora\_inicio, duracion | Es la proyección real de una película en una sala, día y hora determinada.  |
 | **Entrada** | ID\_ENTRADA (PK), ID\_PELICULA (FK), ID\_FUNCION (FK), ID\_SALA (FK) numero\_entrada, fecha\_hora\_venta, fecha\_hora\_funcion, precio\_cobrado | Registra el ticket impreso y cobrado para una función específica.  |
 
-## 	**5.4 Diagrama Entidad-Relación (DER)** 		 {#5.4-diagrama-entidad-relación-(der)}
+## 	**5.4 Diagrama Entidad-Relación (DER)** 	
 [<img width="2048" height="1690" alt="image" src="https://github.com/user-attachments/assets/513dd600-9cbb-45ee-b84d-71cc18920571" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/der.png?raw=true)
 
-## **5.2 Relaciones y Cardinalidades** {#5.2-relaciones-y-cardinalidades}
+## **5.2 Relaciones y Cardinalidades**
 
 	
 
-## **5.3 Normalización** {#5.3-normalización}
+## **5.3 Normalización**
 
 | Cine | 1FN | 2FN | 3FN |
 | :---- | :---- | :---- | :---- |
@@ -301,10 +301,9 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 | Apellido |  | Apellido |  |
 | Animado |  | Animado |  |
 
-## **5.5 Modelo Entidad-Relación (MER)** 	 {#5.5-modelo-entidad-relación-(mer)}
-
+## **5.5 Modelo Entidad-Relación (MER)**
 [<img width="2048" height="1295" alt="image" src="https://github.com/user-attachments/assets/2699f457-45ac-4066-b0c9-f173c258ee6b" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/mer.png?raw=true)
 
-# **6\. Documento Final y Producto** {#6.-documento-final-y-producto}
+# **6\. Documento Final y Producto**
 
 !La estas viendo aca y ahora!
