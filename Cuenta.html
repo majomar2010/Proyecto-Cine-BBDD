@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Velvet Screen | Ingreso y Registro</title>
+</head>
+
+<body>
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <!-- ANILLOS DE CUADERNO -->
+                <div class="notebook-rings">
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                </div>
+
+                <!-- PÁGINA IZQUIERDA -->
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio" id="estadoCuenta">
+                            No iniciaste sesión todavía.
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <button class="btn-cyworld btn-secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
+                    </div>
+
+                    <!-- REDES SOCIALES TAL COMO ESTABAN -->
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li>
+                                <a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- PÁGINA DERECHA -->
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html">Inicio</a>
+                        <a href="Cartelera.html">Cartelera</a>
+                        <a href="Entradas.html">Entradas</a>
+                        <a href="Cuenta.html" class="active">Mi Cuenta</a>
+                        <a href="Informes.html">Informes</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Ingreso de Usuario & Registro ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar/cuenta</span>
+                    </div>
+
+                    <div class="cyworld-grid-2">
+                        <!-- LOGIN -->
+                        <div class="panel-box">
+                            <h3>Ingresar al Sistema</h3>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" id="loginEmail" placeholder="usuario@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" id="loginPass" placeholder="••••••••">
+                            </div>
+                            <button class="btn-cyworld" onclick="iniciarSesion()">Iniciar Sesión</button>
+                            <div class="status-msg" id="msgLogin"></div>
+                        </div>
+
+                        <!-- REGISTRO -->
+                        <div class="panel-box">
+                            <h3>Crear Nueva Cuenta</h3>
+                            <div class="form-group">
+                                <label>Nombre y Apellido</label>
+                                <input type="text" id="regNombre" placeholder="Ej. Ana Gómez">
+                            </div>
+                            <div class="form-group">
+                                <label>DNI</label>
+                                <input type="text" id="regDni" placeholder="Ej. 40123456">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" id="regEmail" placeholder="ana@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" id="regPass" placeholder="Mínimo 4 caracteres">
+                            </div>
+                            <button class="btn-cyworld" onclick="registrarUsuario()">Registrarme</button>
+                            <div class="status-msg" id="msgReg"></div>
+                        </div>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
+            </div>
+        </div>
+
+        <!-- WIDGET LATERAL DERECHO CON CALENDAR.PNG -->
+        <aside class="side-widget">
+            <div class="widget-header">
+                <img src="img/calendar.png" alt="Calendario"> Beneficios Socios
+            </div>
+            <div class="calendar-preview">
+                <img src="img/calendar.png" alt="Calendario de funciones">
+                <div><strong>Club Velvet Screen</strong></div>
+                <div>Registrate para guardar tus reservas</div>
+            </div>
+            <button class="btn-cyworld" onclick="location.href='Entradas.html'">Ir a comprar</button>
+        </aside>
+    </div>
+
+    <script>
+        function actualizarEstado() {
+            const user = JSON.parse(localStorage.getItem('vs_active_user'));
+            document.getElementById('estadoCuenta').innerHTML = user
+                ? `Sesión activa:<br><strong>${user.nombre}</strong><br>DNI: ${user.dni}`
+                : 'No iniciaste sesión todavía.';
+        }
+
+        function registrarUsuario() {
+            const nombre = document.getElementById('regNombre').value.trim();
+            const dni = document.getElementById('regDni').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const pass = document.getElementById('regPass').value.trim();
+
+            if (!nombre || !dni || !email || !pass) {
+                document.getElementById('msgReg').textContent = 'Completá todos los campos.';
+                return;
+            }
+            const users = JSON.parse(localStorage.getItem('vs_users')) || [];
+            if (users.some(u => u.email === email)) {
+                document.getElementById('msgReg').textContent = 'Ese correo ya está registrado.';
+                return;
+            }
+            const nuevo = { nombre, dni, email, pass };
+            users.push(nuevo);
+            localStorage.setItem('vs_users', JSON.stringify(users));
+            localStorage.setItem('vs_active_user', JSON.stringify(nuevo));
+            document.getElementById('msgReg').textContent = '¡Registro exitoso! Sesión iniciada.';
+            actualizarEstado();
+        }
+
+        function iniciarSesion() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const pass = document.getElementById('loginPass').value.trim();
+            const users = JSON.parse(localStorage.getItem('vs_users')) || [];
+            const found = users.find(u => u.email === email && u.pass === pass);
+
+            if (found) {
+                localStorage.setItem('vs_active_user', JSON.stringify(found));
+                document.getElementById('msgLogin').textContent = `¡Bienvenido/a, ${found.nombre}!`;
+                actualizarEstado();
+            } else {
+                document.getElementById('msgLogin').textContent = 'Correo o contraseña incorrectos.';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('vs_active_user');
+            actualizarEstado();
+        }
+
+        actualizarEstado();
+    </script>
+</body>
+
+</html>
