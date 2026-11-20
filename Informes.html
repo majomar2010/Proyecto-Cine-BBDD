@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Velvet Screen | Informes de Venta</title>
+</head>
+
+<body>
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <div class="notebook-rings">
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                </div>
+
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio">
+                            Reportes de recaudación, entradas emitidas y ocupación por sala.
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>▶ Resumen General</h4>
+                        <div class="stats-grid" style="grid-template-columns:1fr;">
+                            <div>Total Entradas: <span class="count" id="totEntradas">0</span></div>
+                            <div>Recaudación: <span class="count" id="totRecaudacion">$0</span></div>
+                        </div>
+                    </div>
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li><a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a></li>
+                            <li><a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a></li>
+                            <li><a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html">Inicio</a>
+                        <a href="Cartelera.html">Cartelera</a>
+                        <a href="Entradas.html">Entradas</a>
+                        <a href="Cuenta.html">Mi Cuenta</a>
+                        <a href="Informes.html" class="active">Informes</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Informes de Venta & Disponibilidad ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar/informes</span>
+                    </div>
+
+                    <div class="panel-box" style="margin-bottom:14px;">
+                        <h3>Disponibilidad Actual por Sala</h3>
+                        <table class="cyworld-table">
+                            <thead>
+                                <tr>
+                                    <th>Sala</th>
+                                    <th>Capacidad Total</th>
+                                    <th>Butacas Ocupadas</th>
+                                    <th>Butacas Disponibles</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sala 1 (2D)</td><td>32</td><td>6</td><td>26</td><td><span class="badge-ok">Disponible</span></td></tr>
+                                <tr><td>Sala 2 (35mm)</td><td>32</td><td>8</td><td>24</td><td><span class="badge-ok">Disponible</span></td></tr>
+                                <tr><td>Sala 3 (VIP)</td><td>32</td><td>4</td><td>28</td><td><span class="badge-ok">Disponible</span></td></tr>
+                                <tr><td>Sala 4 (2D)</td><td>32</td><td>7</td><td>25</td><td><span class="badge-ok">Disponible</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel-box">
+                        <h3>Registro de Ventas Realizadas</h3>
+                        <table class="cyworld-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Cliente</th>
+                                    <th>Película</th>
+                                    <th>Sala</th>
+                                    <th>Butacas</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaVentas"></tbody>
+                        </table>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ventasBase = [
+            { fecha: '19/11/2026', cliente: 'María López', pelicula: 'Silvia Prieto', sala: 'Sala 2', butacas: 'A3, A4', cantidad: 2, total: 9000 },
+            { fecha: '19/11/2026', cliente: 'Lucas Fernández', pelicula: 'El niño pez', sala: 'Sala 1', butacas: 'B5, C2', cantidad: 2, total: 9000 }
+        ];
+        const ventasGuardadas = JSON.parse(localStorage.getItem('vs_ventas')) || [];
+        const todas = [...ventasBase, ...ventasGuardadas];
+
+        const tbody = document.getElementById('tablaVentas');
+        let sumEntradas = 0;
+        let sumTotal = 0;
+
+        todas.forEach(v => {
+            sumEntradas += v.cantidad;
+            sumTotal += v.total;
+            tbody.innerHTML += `
+                <tr>
+                    <td>${v.fecha}</td>
+                    <td>${v.cliente}</td>
+                    <td>${v.pelicula}</td>
+                    <td>${v.sala}</td>
+                    <td>${v.butacas}</td>
+                    <td><strong>$${v.total.toLocaleString('es-AR')}</strong></td>
+                </tr>
+            `;
+        });
+
+        document.getElementById('totEntradas').textContent = sumEntradas;
+        document.getElementById('totRecaudacion').textContent = '$' + sumTotal.toLocaleString('es-AR');
+    </script>
+</body>
+
+</html>
