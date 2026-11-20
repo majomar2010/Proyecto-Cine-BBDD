@@ -3,179 +3,262 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Velvet Screen | Cine Argentino</title>
+    <title>Velvet Screen | Mini-Cine</title>
 </head>
 
 <body>
-    <div class="cabecera">
-        <div class="anchocabecera">
-            <div class="imagen-principal">
-                <img class="logo" src="img/logo.png" alt="Velvet Screen">
-            </div>
-            <div class="buscador">
-                <select>
-                    <option>Selecciona tu cine</option>
-                    <option>Cuauhtemoc (Monterrey, NL)</option>
-                    <option>Gem Plaza (Monterrey, NL)</option>
-                    <option>Alameda (Saltillo, Coah.)</option>
-                </select>
-                <input type="button" value="Ver cartelera" onclick="location.href='Cartelera.html'">
-            </div>
-            <div class="contacto">
-                <input type="button" value="Contacto">
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <!-- ANILLOS DE CUADERNO -->
+                <div class="notebook-rings">
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA IZQUIERDA -->
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio">
+                            Ciclo de cine argentino independiente y de autor en salas del centro porteño.
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>▶ Complejos Centro (CABA)</h4>
+                        <div class="buscador">
+                            <select>
+                                <option>Selecciona tu cine</option>
+                                <option>Cine Gaumont (Av. Rivadavia 1635, Congreso)</option>
+                                <option>Cine Lorca (Av. Corrientes 1428, San Nicolás)</option>
+                                <option>Cinema City General Paz (Av. Cabildo 2702)</option>
+                                <option>Cine Cosmos UBA (Av. Corrientes 2046)</option>
+                                <option>Cine Monumental (Lavalle 780, Microcentro)</option>
+                                <option>Hoyts Abasto (Av. Corrientes 3247)</option>
+                                <option>Cine Premier (Av. Corrientes 1565)</option>
+                            </select>
+                            <input type="button" value="Ver cartelera" onclick="location.href='Cartelera.html'">
+                        </div>
+                        <button class="btn-cyworld btn-secondary" onclick="alert('Contacto: info@velvetscreen.com.ar')">Contacto</button>
+                    </div>
+
+                    <!-- REDES SOCIALES TAL COMO ESTABAN -->
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li>
+                                <a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- PÁGINA DERECHA -->
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html" class="active">Inicio</a>
+                        <a href="Cartelera.html">Cartelera</a>
+                        <a href="#peliculas">Estrenos</a>
+                        <a href="#peliculas">Próximos</a>
+                        <a href="#">Eventos</a>
+                        <a href="#">Galería</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Velvet Screen — Cartelera Digital ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar</span>
+                    </div>
+
+                    <div class="top-summary-grid">
+                        <div class="news-list">
+                            <h4>Últimas novedades</h4>
+                            <ul>
+                                <li>• Función especial: Silvia Prieto (1999)</li>
+                                <li>• Ciclo Lucrecia Martel: La niña santa</li>
+                                <li>• Entradas disponibles en salas del Centro</li>
+                                <li>• Actualización de cartelera semanal</li>
+                            </ul>
+                        </div>
+                        <div class="stats-list">
+                            <h4>Estado del catálogo</h4>
+                            <div class="stats-grid">
+                                <div>Películas <span class="count">6/6</span></div>
+                                <div>Salas CABA <span class="count">7/7</span></div>
+                                <div>Estrenos <span class="count">4/10</span></div>
+                                <div>Funciones <span class="count">18/24</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="miniroom-title">Destacadas</div>
+                    <div class="imagen-slider">
+                        <div id="banners">
+                            <img class="imagenes-banners" src="img/El niño pez.jpg" alt="Destacada">
+                        </div>
+                        <button class="b-anterior" onclick="beforeImage()">❮</button>
+                        <button class="b-siguiente" onclick="nextImage()">❯</button>
+                    </div>
+
+                    <div class="peliculas" id="peliculas">
+                        <h2><img src="img/calendar.png" alt="Calendario"> Películas en Cartelera</h2>
+                        <div class="listapeliculas">
+                            <div class="pelicula-info">
+                                <img src="img/El niño pez.jpg" alt="El niño pez">
+                                <p>El niño pez</p>
+                                <p><strong>Año de estreno:</strong> 09/04/2009</p>
+                                <p><strong>Duración:</strong> 1hs y 36min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Cine romántico, LGBT, Drama, Suspenso, Policial</p>
+                                <p><strong>Calificación:</strong> +16 años</p>
+                                <p><strong>País de Origen:</strong> Argentina, Francia y España</p>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Silvia Prieto.jpg" alt="Silvia Prieto">
+                                <p>Silvia Prieto</p>
+                                <p><strong>Año de estreno:</strong> 27/05/1999</p>
+                                <p><strong>Duración:</strong> 1hs y 32min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Comedia dramática, Cine independiente</p>
+                                <p><strong>Calificación:</strong> +13 años</p>
+                                <p><strong>País de Origen:</strong> Argentina</p>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Wakolda.jpg" alt="Wakolda">
+                                <p>Wakolda</p>
+                                <p><strong>Año de estreno:</strong> 19/09/2013</p>
+                                <p><strong>Duración:</strong> 1hs y 33min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Drama, Thriller histórico</p>
+                                <p><strong>Calificación:</strong> +13 años</p>
+                                <p><strong>País de Origen:</strong> Argentina y España</p>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Tan de repente.jpg" alt="Tan de repente">
+                                <p>Tan de repente</p>
+                                <p><strong>Año de estreno:</strong> 19/06/2003</p>
+                                <p><strong>Duración:</strong> 1hs y 30min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Comedia dramática, Drama, Cine independiente</p>
+                                <p><strong>Calificación:</strong> +16 años</p>
+                                <p><strong>País de Origen:</strong> Argentina</p>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/El angel.jpg" alt="El ángel">
+                                <p>El ángel</p>
+                                <p><strong>Año de estreno:</strong> 09/08/2018</p>
+                                <p><strong>Duración:</strong> 1hs y 58min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Crimen, Drama, Biografía, Thriller</p>
+                                <p><strong>Calificación:</strong> +16 años</p>
+                                <p><strong>País de Origen:</strong> Argentina y España</p>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/La niña santa.jpg" alt="La niña santa">
+                                <p>La niña santa</p>
+                                <p><strong>Año de estreno:</strong> 06/05/2004</p>
+                                <p><strong>Duración:</strong> 1hs y 46min</p>
+                                <p><strong>Fecha de Ingreso:</strong> 11/11/2026</p>
+                                <p><strong>Disponible:</strong> Si</p>
+                                <p><strong>Género:</strong> Drama psicológico, Coming-of-age, Comedia</p>
+                                <p><strong>Calificación:</strong> +14 años</p>
+                                <p><strong>País de Origen:</strong> Argentina, España e Italia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
             </div>
         </div>
-    </div>
 
-    <nav class="navegador">
-        <div class="anchonavegador">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Cartelera.html">Cartelera</a></li>
-                <li><a href="#peliculas">Estrenos</a></li>
-                <li><a href="#peliculas">Próximos estrenos</a></li>
-                <li><a href="#">Eventos/Fiestas</a></li>
-                <li><a href="#">Galería</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="imagen-slider">
-        <div id="banners">
-            <img class="imagenes-banners" src="img/El niño pez.jpg" alt="Destacada">
-        </div>
-        <div class="botonesSigAnt">
-            <button class="b-anterior" onclick="beforeImage()">❮</button>
-            <button class="b-siguiente" onclick="nextImage()">❯</button>
-        </div>
-        <script>
-            var slider_content = document.getElementById('banners');
-            var image = [
-                "El niño pez.jpg",
-                "Silvia Prieto.jpg",
-                "Wakolda.jpg",
-                "Tan de repente.jpg",
-                "El angel.jpg",
-                "La niña santa.jpg"
-            ];
-            var i = 0;
-
-            function nextImage() {
-                i = (i + 1) % image.length;
-                slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
-            }
-
-            function beforeImage() {
-                i = (i - 1 + image.length) % image.length;
-                slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
-            }
-        </script>
-    </div>
-
-    <div class="peliculas" id="peliculas">
-        <h2>Películas en Cartelera</h2>
-        <div class="listapeliculas">
-            <div class="pelicula-info">
-                <img src="img/El niño pez.jpg" alt="El niño pez">
-                <p>El niño pez</p>
-                <p>Año de estreno: 09/04/2009</p>
-                <p>Duración: 1hs y 36min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Cine romántico, LGBT, Drama, Suspenso, Policial</p>
-                <p>Calificación: +16 años</p>
-                <p>País de Origen: Argentina, Francia y España</p>
+        <!-- WIDGET LATERAL DERECHO CON CALENDAR.PNG -->
+        <aside class="side-widget">
+            <div class="widget-header">
+                <img src="img/calendar.png" alt="Calendario"> Agenda & Horarios
             </div>
+            <div class="calendar-preview">
+                <img src="img/calendar.png" alt="Calendario de funciones">
+                <div><strong>Noviembre 2026</strong></div>
+                <div>Funciones diarias en salas del Centro</div>
+            </div>
+            <button class="btn-cyworld" onclick="location.href='Cartelera.html'">Ver horarios</button>
 
-            <div class="pelicula-info">
-                <img src="img/Silvia Prieto.jpg" alt="Silvia Prieto">
-                <p>Silvia Prieto</p>
-                <p>Año de estreno: 27/05/1999</p>
-                <p>Duración: 1hs y 32min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Comedia dramática, Cine independiente</p>
-                <p>Calificación: +13 años</p>
-                <p>País de Origen: Argentina</p>
+            <div class="widget-bars">
+                <div class="bar-row">
+                    <span>Ocupación</span>
+                    <div class="bar-track"><div class="bar-fill-orange"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span>Estrenos</span>
+                    <div class="bar-track"><div class="bar-fill-green"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span>Salas CABA</span>
+                    <div class="bar-track"><div class="bar-fill-blue"></div></div>
+                </div>
             </div>
-
-            <div class="pelicula-info">
-                <img src="img/Wakolda.jpg" alt="Wakolda">
-                <p>Wakolda</p>
-                <p>Año de estreno: 19/09/2013</p>
-                <p>Duración: 1hs y 33min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Drama, Thriller histórico</p>
-                <p>Calificación: +13 años</p>
-                <p>País de Origen: Argentina y España</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/Tan de repente.jpg" alt="Tan de repente">
-                <p>Tan de repente</p>
-                <p>Año de estreno: 19/06/2003</p>
-                <p>Duración: 1hs y 30min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Comedia dramática, Drama, Cine independiente</p>
-                <p>Calificación: +16 años</p>
-                <p>País de Origen: Argentina</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/El angel.jpg" alt="El ángel">
-                <p>El ángel</p>
-                <p>Año de estreno: 09/08/2018</p>
-                <p>Duración: 1hs y 58min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Crimen, Drama, Biografía, Thriller</p>
-                <p>Calificación: +16 años</p>
-                <p>País de Origen: Argentina y España</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/La niña santa.jpg" alt="La niña santa">
-                <p>La niña santa</p>
-                <p>Año de estreno: 06/05/2004</p>
-                <p>Duración: 1hs y 46min</p>
-                <p>Fecha de Ingreso: 11/11/2026</p>
-                <p>Disponible: Si</p>
-                <p>Género: Drama psicológico, Coming-of-age, Comedia</p>
-                <p>Calificación: +14 años</p>
-                <p>País de Origen: Argentina, España e Italia</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="pie">
-        <div class="pie-padre">
-            <div class="pie-izquierda">
-                <h2>Velvet Screen</h2>
-                <p>Proyecto de Base de Datos - Cine</p>
-            </div>
-            <div class="pie-centro">
-            </div>
-            <div class="pie-derecha">
-                <h3>Síguenos</h3>
-                <ul>
-                    <li><a href="#"><img src="img/icons/Facebook_16px.png" alt="Facebook"> Facebook</a></li>
-                    <li><a href="#"><img src="img/icons/Instagram_16px.png" alt="Instagram"> Instagram</a></li>
-                    <li><a href="#"><img src="img/icons/Twitter_16px.png" alt="Twitter"> Twitter</a></li>
-                </ul>
-            </div>
-        </div>
+        </aside>
     </div>
 
     <script>
-        setInterval(nextImage, 3500);
-    </script>
-</body>
+        var slider_content = document.getElementById('banners');
+        var image = [
+            "El niño pez.jpg",
+            "Silvia Prieto.jpg",
+            "Wakolda.jpg",
+            "Tan de repente.jpg",
+            "El angel.jpg",
+            "La niña santa.jpg"
+        ];
+        var i = 0;
 
-</html>
-        setInterval('nextImage()', 3000);
+        function nextImage() {
+            i = (i + 1) % image.length;
+            slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
+        }
+
+        function beforeImage() {
+            i = (i - 1 + image.length) % image.length;
+            slider_content.innerHTML = '<img class="imagenes-banners" src="img/' + image[i] + '" alt="Destacada">';
+        }
+
+        setInterval(nextImage, 3500);
     </script>
 </body>
 
