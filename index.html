@@ -65,9 +65,8 @@
             <button class="b-siguiente" onclick="nextImage()">+</button>
         </div>
         <script>
-            var slider_content = document.getElementById('banners');
 
-            var image = ["angrybirds", "comosifueralaprimeravez", "habiaunavezenhollywood", "historiasmiedo", "it", "angrybirds"];
+            var image = ["El niño pez", "La cienaga", "Wakolda.", "Tan de repente", "El angel", "La niña santa"];
 
             var i = image.length;
 
@@ -80,7 +79,7 @@
                 } else {
                     i = 1;
                 }
-                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=\"img/banners/" + image[i] + ".png\">";
+                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=\"img/" + image[i] + ".jpg\">";
             }
 
             function beforeImage() {
@@ -89,7 +88,7 @@
                 } else {
                     i = image.length;
                 }
-                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=img/banners/" + image[i - 1] + ".png>";
+                slider_content.innerHTML = "<img class=\"imagenes-banners\" src=img/" + image[i - 1] + ".png>";
             }
         </script>
     </div>
