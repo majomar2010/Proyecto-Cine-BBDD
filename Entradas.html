@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Velvet Screen | Compra de Entradas y Butacas</title>
+</head>
+
+<body>
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <!-- ANILLOS DE CUADERNO -->
+                <div class="notebook-rings">
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                </div>
+
+                <!-- PÁGINA IZQUIERDA -->
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio" id="userSessionBox">
+                            Estado: <strong>Invitado</strong> (Iniciá sesión en "Mi Cuenta" para asociar la compra).
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>▶ Disponibilidad por Sala</h4>
+                        <table class="cyworld-table">
+                            <tr><th>Sala</th><th>Libres</th></tr>
+                            <tr><td>Sala 1 (2D)</td><td><span class="badge-ok" id="dispSala1">28 / 32</span></td></tr>
+                            <tr><td>Sala 2 (35mm)</td><td><span class="badge-ok" id="dispSala2">26 / 32</span></td></tr>
+                            <tr><td>Sala 3 (VIP)</td><td><span class="badge-ok" id="dispSala3">30 / 32</span></td></tr>
+                            <tr><td>Sala 4 (2D)</td><td><span class="badge-ok" id="dispSala4">25 / 32</span></td></tr>
+                        </table>
+                    </div>
+
+                    <!-- REDES SOCIALES TAL COMO ESTABAN -->
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li>
+                                <a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- PÁGINA DERECHA -->
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html">Inicio</a>
+                        <a href="Cartelera.html">Cartelera</a>
+                        <a href="Entradas.html" class="active">Entradas</a>
+                        <a href="Cuenta.html">Mi Cuenta</a>
+                        <a href="Informes.html">Informes</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Compra de Entradas & Reserva de Butacas ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar/entradas</span>
+                    </div>
+
+                    <div class="cyworld-grid-2">
+                        <!-- SELECCIÓN DE FUNCIÓN -->
+                        <div class="panel-box">
+                            <h3>1. Datos de la Función</h3>
+                            <div class="form-group">
+                                <label>Complejo (CABA Centro)</label>
+                                <select id="selCine">
+                                    <option>Cine Gaumont (Av. Rivadavia 1635, Congreso)</option>
+                                    <option>Cine Lorca (Av. Corrientes 1428, San Nicolás)</option>
+                                    <option>Cinema City General Paz (Av. Cabildo 2702)</option>
+                                    <option>Cine Cosmos UBA (Av. Corrientes 2046)</option>
+                                    <option>Cine Monumental (Lavalle 780, Microcentro)</option>
+                                    <option>Hoyts Abasto (Av. Corrientes 3247)</option>
+                                    <option>Cine Premier (Av. Corrientes 1565)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Película</label>
+                                <select id="selPelicula" onchange="renderSeats()">
+                                    <option value="El niño pez|Sala 1">El niño pez (Sala 1)</option>
+                                    <option value="Silvia Prieto|Sala 2">Silvia Prieto (Sala 2)</option>
+                                    <option value="Wakolda|Sala 3">Wakolda (Sala 3)</option>
+                                    <option value="Tan de repente|Sala 1">Tan de repente (Sala 1)</option>
+                                    <option value="El ángel|Sala 4">El ángel (Sala 4)</option>
+                                    <option value="La niña santa|Sala 2">La niña santa (Sala 2)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Horario</label>
+                                <select id="selHorario" onchange="renderSeats()">
+                                    <option>16:30 hs</option>
+                                    <option>19:15 hs</option>
+                                    <option>22:00 hs</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Resumen de Reserva</label>
+                                <div id="resumenCompra" style="font-size:12px; color:#3f4448; background:#fff; padding:8px; border:1px solid #cfd5d9; border-radius:4px;">
+                                    Butacas seleccionadas: <strong>Ninguna</strong><br>
+                                    Total ($4.500 c/u): <strong>$0</strong>
+                                </div>
+                            </div>
+                            <button class="btn-cyworld" onclick="confirmarCompra()">Confirmar Compra y Reservar</button>
+                            <div class="status-msg" id="msgCompra"></div>
+                        </div>
+
+                        <!-- MAPA DE BUTACAS -->
+                        <div class="panel-box">
+                            <h3>2. Seleccioná tus Butacas</h3>
+                            <div class="screen-banner">PANTALLA</div>
+                            <div class="seats-grid" id="seatsGrid"></div>
+                            <div class="seat-legend">
+                                <span class="legend-item"><span class="legend-box" style="background:#fff;"></span> Libre</span>
+                                <span class="legend-item"><span class="legend-box" style="background:#4b85a8;"></span> Elegida</span>
+                                <span class="legend-item"><span class="legend-box" style="background:#cfd5d9;"></span> Ocupada</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
+            </div>
+        </div>
+
+        <!-- WIDGET LATERAL DERECHO CON CALENDAR.PNG -->
+        <aside class="side-widget">
+            <div class="widget-header">
+                <img src="img/calendar.png" alt="Calendario"> Agenda & Horarios
+            </div>
+            <div class="calendar-preview">
+                <img src="img/calendar.png" alt="Calendario de funciones">
+                <div><strong>Noviembre 2026</strong></div>
+                <div>Reserva online sin cargo</div>
+            </div>
+            <button class="btn-cyworld" onclick="location.href='Informes.html'">Ver informes</button>
+        </aside>
+    </div>
+
+    <script>
+        const PRECIO_ENTRADA = 4500;
+        let selectedSeats = [];
+
+        const activeUser = JSON.parse(localStorage.getItem('vs_active_user'));
+        if (activeUser) {
+            document.getElementById('userSessionBox').innerHTML =
+                `Usuario: <strong>${activeUser.nombre}</strong><br>Email: ${activeUser.email}`;
+        }
+
+        function getStorageKey() {
+            const peli = document.getElementById('selPelicula').value;
+            const hora = document.getElementById('selHorario').value;
+            return `vs_seats_${peli}_${hora}`;
+        }
+
+        function renderSeats() {
+            selectedSeats = [];
+            const grid = document.getElementById('seatsGrid');
+            grid.innerHTML = '';
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+
+            const rows = ['A', 'B', 'C', 'D'];
+            rows.forEach(row => {
+                for (let col = 1; col <= 8; col++) {
+                    const id = row + col;
+                    const div = document.createElement('div');
+                    div.className = 'seat' + (occupied.includes(id) ? ' occupied' : '');
+                    div.textContent = id;
+                    if (!occupied.includes(id)) {
+                        div.onclick = () => toggleSeat(id, div);
+                    }
+                    grid.appendChild(div);
+                }
+            });
+            updateResumen();
+            updateDisponibilidad();
+        }
+
+        function toggleSeat(id, el) {
+            if (selectedSeats.includes(id)) {
+                selectedSeats = selectedSeats.filter(s => s !== id);
+                el.classList.remove('selected');
+            } else {
+                selectedSeats.push(id);
+                el.classList.add('selected');
+            }
+            updateResumen();
+        }
+
+        function updateResumen() {
+            const total = selectedSeats.length * PRECIO_ENTRADA;
+            document.getElementById('resumenCompra').innerHTML =
+                `Butacas seleccionadas: <strong>${selectedSeats.length ? selectedSeats.join(', ') : 'Ninguna'}</strong><br>` +
+                `Total ($4.500 c/u): <strong>$${total.toLocaleString('es-AR')}</strong>`;
+        }
+
+        function updateDisponibilidad() {
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+            const libres = 32 - occupied.length;
+            const sala = document.getElementById('selPelicula').value.split('|')[1];
+            if (sala === 'Sala 1') document.getElementById('dispSala1').textContent = `${libres} / 32`;
+            if (sala === 'Sala 2') document.getElementById('dispSala2').textContent = `${libres} / 32`;
+            if (sala === 'Sala 3') document.getElementById('dispSala3').textContent = `${libres} / 32`;
+            if (sala === 'Sala 4') document.getElementById('dispSala4').textContent = `${libres} / 32`;
+        }
+
+        function confirmarCompra() {
+            if (selectedSeats.length === 0) {
+                document.getElementById('msgCompra').textContent = 'Seleccioná al menos una butaca.';
+                return;
+            }
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+            const updated = [...occupied, ...selectedSeats];
+            localStorage.setItem(key, JSON.stringify(updated));
+
+            const ventas = JSON.parse(localStorage.getItem('vs_ventas')) || [];
+            const [pelicula, sala] = document.getElementById('selPelicula').value.split('|');
+            ventas.push({
+                fecha: new Date().toLocaleDateString('es-AR'),
+                cliente: activeUser ? activeUser.nombre : 'Invitado',
+                cine: document.getElementById('selCine').value,
+                pelicula: pelicula,
+                sala: sala,
+                butacas: selectedSeats.join(', '),
+                cantidad: selectedSeats.length,
+                total: selectedSeats.length * PRECIO_ENTRADA
+            });
+            localStorage.setItem('vs_ventas', JSON.stringify(ventas));
+
+            document.getElementById('msgCompra').textContent =
+                `¡Compra registrada! Butacas ${selectedSeats.join(', ')} reservadas.`;
+            renderSeats();
+        }
+
+        renderSeats();
+    </script>
+</body>
+
+</html>
