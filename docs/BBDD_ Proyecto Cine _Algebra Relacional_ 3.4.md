@@ -24,46 +24,46 @@
 
 ## **1.1 Expresión Algebraica de los Scripts Realizados** 
 
-| $\Pi$(Proyección): Filtra columnas, se usa para definir lo que se muestra en pantalla, como el nombre de la película o el número de sala (*SELECT*). $𝞼$(Selección): Filtra filas se usa para restringir resultados, como filtrar películas infantiles o entradas con descuento (*WHERE*). ⋈(Join): Combina registros de dos o más tablas mediante sus claves, para relacionar datos como Pelicula, Función y Sala ( *INNERJOIN*). 𝒢(Agrupación): Agrupa tuplas y aplica funciones, para obtener totales resumidos, como las entradas vendidas por mes (*GROUP BY* con *COUNT*/*SUM*). |
+| Π(Proyección): Filtra columnas, se usa para definir lo que se muestra en pantalla, como el nombre de la película o el número de sala (*SELECT*). σ(Selección): Filtra filas se usa para restringir resultados, como filtrar películas infantiles o entradas con descuento (*WHERE*). ⋈(Join): Combina registros de dos o más tablas mediante sus claves, para relacionar datos como Pelicula, Función y Sala ( *INNERJOIN*). 𝒢(Agrupación): Agrupa tuplas y aplica funciones, para obtener totales resumidos, como las entradas vendidas por mes (*GROUP BY* con *COUNT*/*SUM*). |
 | :---- |
 
 * **Cantidad de entradas vendidas por película en el mes** 
 
-  $\Pi$Nombre\_Pelicula, Entradas\_Vendidas(Nombre\_Pelicula𝒢(ID\_ENTRADA(σ Mes(Fecha\_Hora\_Venta)(Entrada⋈ID\_PELICULA.Pelicula))) 
+		ΠNombre_Pelicula, Entradas_Vendidas(Nombre_Pelicula𝒢(ID_ENTRADA(σ Mes(Fecha_Hora_Venta)(Entrada⋈ID_PELICULA.Pelicula))) 
 
-  Nota: Se aplica un agrupamiento ($𝒢$) sobre la tabla Entrada filtrada por mes, unida con Película.
+  Nota: Se aplica un agrupamiento (𝒢) sobre la tabla Entrada filtrada por mes, unida con Película.
 
 
 * **Películas por día y por sala**
 
-  $\Pi$Nombre\_Pelicula,Dia\_Semana,Numero(Película⋈ID\_PELICULA.Funcion)⋈ID\_SALA.SALA)
+		ΠNombre_Pelicula,Dia_Semana,Numero(Película⋈ID_PELICULA.Funcion)⋈ID_SALA.SALA)
 
   Nota: Se usa Película, Función (que contiene Dia\_Semana) y Sala para proyectar el título, el día y la sala correspondiente.
 
 
 * **Películas que tuvieron descuento según el concepto de entrada**
 
-  $\Pi$Nombre\_Pelicula, Precio\_Cobrado(𝜎Precio\_Cobrado\<Precio\_Regular (Entrada⋈ID\_PELICULA.Pelicula))
+		ΠNombre_Pelicula, Precio_Cobrado(𝜎Precio_Cobrado<Precio_Regular(Entrada⋈ID_PELICULA.Pelicula))
 
   Nota: Se filtra las entradas donde el Precio\_Cobrado aplica un descuento (menor al precio regular base) y proyecta las películas involucradas.
 
 
 * **Capacidad máxima por sala en una función** 
 
-  $\Pi$ID\_FUNCION, Hora\_Inicio, Numero, Capacidad (Funcion⋈ID\_SALA.Sala)
+		ΠID_FUNCION, Hora_Inicio, Numero, Capacidad (Funcion⋈ID_SALA.Sala)
 
   Nota: Se relaciona cada función proyectada con la tabla Sala para obtener el límite máximo de tickets comercializables por función (capacidad).
 
 
 * **Películas por género exhibidas por sala**
 
-  $\Pi$Nombre\_Pelicula, Tipo\_Genero, Numero (((Pelicula⋈ID\_GENERO.Genero)⋈ID\_SALA.Sala)
+		ΠNombre_Pelicula, Tipo_Genero, Numero (((Pelicula⋈ID_GENERO.Genero)⋈ID_SALA.Sala)
 
   Nota: Se integra Película, Genero, Función y Sala para listar qué películas y géneros se presentan en cada sala.
 
 
 * **Películas infantiles por sala y por función** 
 
-  $\Pi$Nombre\_Pelicula, Numero, Hora\_Inicio(𝜎Tipo\_Genero=”Infantil”((Pelicula⋈ID\_GENERO.Genero)⋈ID\_PELICULA.Funcion)⋈ID\_SALA.Sala))
+		 ΠNombre_Pelicula, Numero, Hora_Inicio(𝜎Tipo_Genero= ”Infantil”((Pelicula⋈ID_GENERO.Genero)⋈ID_PELICULA.Funcion)⋈ID_SALA.Sala))
 
   Nota: Se selecciona una categoría del género conectando la película con su función y sala.
