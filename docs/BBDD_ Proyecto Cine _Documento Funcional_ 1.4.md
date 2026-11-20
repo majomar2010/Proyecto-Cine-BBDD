@@ -202,8 +202,7 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 | **Entrada** | ID\_ENTRADA (PK), ID\_PELICULA (FK), ID\_FUNCION (FK), ID\_SALA (FK) numero\_entrada, fecha\_hora\_venta, fecha\_hora\_funcion, precio\_cobrado | Registra el ticket impreso y cobrado para una función específica.  |
 
 ## 	**5.4 Diagrama Entidad-Relación (DER)** 		 {#5.4-diagrama-entidad-relación-(der)}
-
-	![][image1]
+[<img width="2048" height="1690" alt="image" src="https://github.com/user-attachments/assets/513dd600-9cbb-45ee-b84d-71cc18920571" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/der.png?raw=true)
 
 ## **5.2 Relaciones y Cardinalidades** {#5.2-relaciones-y-cardinalidades}
 
@@ -304,11 +303,8 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 
 ## **5.5 Modelo Entidad-Relación (MER)** 	 {#5.5-modelo-entidad-relación-(mer)}
 
-	![][image2]
+[<img width="2048" height="1295" alt="image" src="https://github.com/user-attachments/assets/2699f457-45ac-4066-b0c9-f173c258ee6b" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/mer.png?raw=true)
 
 # **6\. Documento Final y Producto** {#6.-documento-final-y-producto}
 
-[image1]: [<img width="2048" height="1690" alt="image" src="https://github.com/user-attachments/assets/513dd600-9cbb-45ee-b84d-71cc18920571" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/der.png?raw=true)
-
-
-[image2]: <img width="2048" height="1295" alt="image" src="https://github.com/user-attachments/assets/2699f457-45ac-4066-b0c9-f173c258ee6b" />
+!La estas viendo aca y ahora!
