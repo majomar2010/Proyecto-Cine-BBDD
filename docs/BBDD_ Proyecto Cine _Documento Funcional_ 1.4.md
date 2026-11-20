@@ -308,7 +308,7 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 
 # **6\. Documento Final y Producto** {#6.-documento-final-y-producto}
 
-[image1]: <img width="2048" height="1690" alt="image" src="https://github.com/user-attachments/assets/513dd600-9cbb-45ee-b84d-71cc18920571" />
+[image1]: [<img width="2048" height="1690" alt="image" src="https://github.com/user-attachments/assets/513dd600-9cbb-45ee-b84d-71cc18920571" />](https://github.com/majomar2010/velvet-screen/blob/main/docs/der.png?raw=true)
 
 
 [image2]: <img width="2048" height="1295" alt="image" src="https://github.com/user-attachments/assets/2699f457-45ac-4066-b0c9-f173c258ee6b" />
