@@ -3,127 +3,186 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Velvet Screen | Cartelera</title>
+    <title>Velvet Screen | Cartelera y Horarios</title>
 </head>
 
 <body>
-    <div class="cabecera">
-        <div class="anchocabecera">
-            <div class="imagen-principal">
-                <img class="logo" src="img/logo.png" alt="Velvet Screen">
-            </div>
-            <div class="buscador">
-                <select>
-                    <option>Selecciona tu cine</option>
-                    <option>Cinemark Palermo (Palermo, CABA)</option>
-                    <option>Hoyts Abasto (Balvanera, CABA)</option>
-                    <option>Cinépolis Recoleta (Recoleta, CABA)</option>
-                    <option>Arte Multiplex (Belgrano, CABA)</option>
-                </select>
-                <input type="button" value="Ver cartelera" onclick="location.href='Cartelera.html'">
-            </div>
-            <div class="contacto">
-                <input type="button" value="Contacto">
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <!-- ANILLOS DE CUADERNO -->
+                <div class="notebook-rings">
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="ring-pair">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA IZQUIERDA -->
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio">
+                            Grilla de horarios y salas disponibles en el centro de Buenos Aires.
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>▶ Complejos Centro (CABA)</h4>
+                        <div class="buscador">
+                            <select>
+                                <option>Selecciona tu cine</option>
+                                <option>Cine Gaumont (Av. Rivadavia 1635, Congreso)</option>
+                                <option>Cine Lorca (Av. Corrientes 1428, San Nicolás)</option>
+                                <option>Cinema City General Paz (Av. Cabildo 2702)</option>
+                                <option>Cine Cosmos UBA (Av. Corrientes 2046)</option>
+                                <option>Cine Monumental (Lavalle 780, Microcentro)</option>
+                                <option>Hoyts Abasto (Av. Corrientes 3247)</option>
+                                <option>Cine Premier (Av. Corrientes 1565)</option>
+                            </select>
+                            <input type="button" value="Ver cartelera" onclick="location.href='Cartelera.html'">
+                        </div>
+                        <button class="btn-cyworld btn-secondary" onclick="alert('Contacto: info@velvetscreen.com.ar')">Contacto</button>
+                    </div>
+
+                    <!-- REDES SOCIALES TAL COMO ESTABAN -->
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li>
+                                <a href=""><img src="img/icons/Facebook_16px.png">Facebook</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Instagram_16px.png">Instagram</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Twitter_16px.png">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- PÁGINA DERECHA -->
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html">Inicio</a>
+                        <a href="Cartelera.html" class="active">Cartelera</a>
+                        <a href="index.html#peliculas">Estrenos</a>
+                        <a href="index.html#peliculas">Próximos</a>
+                        <a href="#">Eventos</a>
+                        <a href="#">Galería</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Cartelera & Horarios ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar/cartelera</span>
+                    </div>
+
+                    <div class="peliculas">
+                        <h2><img src="img/calendar.png" alt="Calendario"> Horarios de Funciones</h2>
+                        <div class="listapeliculas">
+                            <div class="pelicula-info">
+                                <img src="img/El niño pez.jpg" alt="El niño pez">
+                                <p>El niño pez</p>
+                                <p><strong>Sala:</strong> Sala 1 | +16 años</p>
+                                <p><strong>Duración:</strong> 1hs y 36min</p>
+                                <p><strong>Género:</strong> Drama, Romance, Suspenso</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 16:30 | 19:15 | 22:00
+                                </div>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Silvia Prieto.jpg" alt="Silvia Prieto">
+                                <p>Silvia Prieto</p>
+                                <p><strong>Sala:</strong> Sala 2 | +13 años</p>
+                                <p><strong>Duración:</strong> 1hs y 32min</p>
+                                <p><strong>Género:</strong> Comedia dramática, Cine independiente</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 15:00 | 18:00 | 21:00
+                                </div>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Wakolda.jpg" alt="Wakolda">
+                                <p>Wakolda</p>
+                                <p><strong>Sala:</strong> Sala 3 | +13 años</p>
+                                <p><strong>Duración:</strong> 1hs y 33min</p>
+                                <p><strong>Género:</strong> Drama, Thriller histórico</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 17:00 | 20:00 | 22:45
+                                </div>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/Tan de repente.jpg" alt="Tan de repente">
+                                <p>Tan de repente</p>
+                                <p><strong>Sala:</strong> Sala 1 | +16 años</p>
+                                <p><strong>Duración:</strong> 1hs y 30min</p>
+                                <p><strong>Género:</strong> Comedia dramática, Cine independiente</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 14:15 | 18:45
+                                </div>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/El angel.jpg" alt="El ángel">
+                                <p>El ángel</p>
+                                <p><strong>Sala:</strong> Sala 4 | +16 años</p>
+                                <p><strong>Duración:</strong> 1hs y 58min</p>
+                                <p><strong>Género:</strong> Crimen, Drama, Biografía, Thriller</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 16:00 | 19:30 | 22:30
+                                </div>
+                            </div>
+
+                            <div class="pelicula-info">
+                                <img src="img/La niña santa.jpg" alt="La niña santa">
+                                <p>La niña santa</p>
+                                <p><strong>Sala:</strong> Sala 2 | +14 años</p>
+                                <p><strong>Duración:</strong> 1hs y 46min</p>
+                                <p><strong>Género:</strong> Drama psicológico, Comedia</p>
+                                <div class="horario-box">
+                                    <img src="img/calendar.png" alt="Horarios"> 16:45 | 20:15
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
             </div>
         </div>
-    </div>
 
-    <nav class="navegador">
-        <div class="anchonavegador">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Cartelera.html" style="color: #e50914;">Cartelera</a></li>
-                <li><a href="index.html#peliculas">Estrenos</a></li>
-                <li><a href="index.html#peliculas">Próximos estrenos</a></li>
-                <li><a href="#">Eventos/Fiestas</a></li>
-                <li><a href="#">Galería</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="peliculas" style="margin-top: 170px;">
-        <h2>Cartelera Completa y Horarios</h2>
-        <div class="listapeliculas">
-            <div class="pelicula-info">
-                <img src="img/El niño pez.jpg" alt="El niño pez">
-                <p>El niño pez</p>
-                <p><strong>Sala 1</strong> | Calificación: +16 años</p>
-                <p>Duración: 1hs y 36min</p>
-                <p>Horarios: 16:30 - 19:15 - 22:00</p>
-                <p>Género: Drama, Romance, Suspenso</p>
+        <!-- WIDGET LATERAL DERECHO CON CALENDAR.PNG -->
+        <aside class="side-widget">
+            <div class="widget-header">
+                <img src="img/calendar.png" alt="Calendario"> Agenda & Horarios
             </div>
-
-            <div class="pelicula-info">
-                <img src="img/Silvia Prieto.jpg" alt="Silvia Prieto">
-                <p>Silvia Prieto</p>
-                <p><strong>Sala 2</strong> | Calificación: +13 años</p>
-                <p>Duración: 1hs y 32min</p>
-                <p>Horarios: 15:00 - 18:00 - 21:00</p>
-                <p>Género: Comedia dramática, Cine independiente</p>
+            <div class="calendar-preview">
+                <img src="img/calendar.png" alt="Calendario de funciones">
+                <div><strong>Noviembre 2026</strong></div>
+                <div>Seleccioná tu función del día</div>
             </div>
-
-            <div class="pelicula-info">
-                <img src="img/Wakolda.jpg" alt="Wakolda">
-                <p>Wakolda</p>
-                <p><strong>Sala 3</strong> | Calificación: +13 años</p>
-                <p>Duración: 1hs y 33min</p>
-                <p>Horarios: 17:00 - 20:00 - 22:45</p>
-                <p>Género: Drama, Thriller histórico</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/Tan de repente.jpg" alt="Tan de repente">
-                <p>Tan de repente</p>
-                <p><strong>Sala 1</strong> | Calificación: +16 años</p>
-                <p>Duración: 1hs y 30min</p>
-                <p>Horarios: 14:15 - 18:45</p>
-                <p>Género: Comedia dramática, Cine independiente</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/El angel.jpg" alt="El ángel">
-                <p>El ángel</p>
-                <p><strong>Sala 4</strong> | Calificación: +16 años</p>
-                <p>Duración: 1hs y 58min</p>
-                <p>Horarios: 16:00 - 19:30 - 22:30</p>
-                <p>Género: Crimen, Drama, Biografía, Thriller</p>
-            </div>
-
-            <div class="pelicula-info">
-                <img src="img/La niña santa.jpg" alt="La niña santa">
-                <p>La niña santa</p>
-                <p><strong>Sala 2</strong> | Calificación: +14 años</p>
-                <p>Duración: 1hs y 46min</p>
-                <p>Horarios: 16:45 - 20:15</p>
-                <p>Género: Drama psicológico, Comedia</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="pie">
-        <div class="pie-padre">
-            <div class="pie-izquierda">
-                <h2>Velvet Screen</h2>
-                <p>Proyecto de Base de Datos - Cine</p>
-            </div>
-            <div class="pie-centro">
-            </div>
-            <div class="pie-derecha">
-                <h3>Síguenos</h3>
-                <ul>
-                    <li>
-                        <a href="#"><img src="img/icons/Facebook_16px.png" alt="Facebook"> Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="img/icons/Instagram_16px.png" alt="Instagram"> Instagram</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="img/icons/Twitter_16px.png" alt="Twitter"> Twitter</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <button class="btn-cyworld" onclick="location.href='index.html'">Volver al inicio</button>
+        </aside>
     </div>
 </body>
 
