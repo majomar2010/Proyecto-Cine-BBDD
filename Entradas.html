@@ -1,762 +1,261 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'IBM Plex Sans', 'DotGothic16', sans-serif;
-}
-
-body {
-    background-color: #b4b9bc;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-    background-size: 20px 20px;
-    color: #3f4448;
-    padding: 32px 16px;
-    min-height: 100vh;
-}
-
-/* LAYOUT GENERAL (LIBRETA + WIDGET LATERAL) */
-.cyworld-wrapper {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    gap: 105px;
-}
-
-/* CONTENEDOR EXTERIOR DE LA LIBRETA */
-.cyworld-outer {
-    flex: 1;
-    background-color: #e2e6e8;
-    border: 1.5px solid #8c9398;
-    border-radius: 16px;
-    padding: 12px;
-    box-shadow: 0 6px 18px rgba(45, 50, 55, 0.18);
-    position: relative;
-}
-
-/* BORDE PUNTEADO INTERIOR */
-.cyworld-dashed {
-    border: 1.5px dashed #a4abb0;
-    border-radius: 12px;
-    padding: 10px;
-    display: flex;
-    gap: 14px;
-    position: relative;
-    background-color: #eef1f3;
-}
-
-/* ANILLOS DE CUADERNO */
-.notebook-rings {
-    position: absolute;
-    left: 256px;
-    top: 75px;
-    bottom: 75px;
-    width: 26px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.ring-pair {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.ring {
-    width: 26px;
-    height: 6px;
-    background: linear-gradient(180deg, #ffffff 0%, #cfd4d8 50%, #7d8489 100%);
-    border-radius: 5px;
-    border: 1px solid #6e757a;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* COLUMNA IZQUIERDA (PERFIL Y BUSCADOR) */
-.left-page {
-    width: 254px;
-    flex-shrink: 0;
-    background: #ffffff;
-    border: 1px solid #aeb5ba;
-    border-radius: 10px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.today-counter {
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    color: #6b7278;
-    border-bottom: 1px solid #e1e5e8;
-    padding-bottom: 8px;
-    letter-spacing: 0.4px;
-}
-
-.today-counter span.num-accent {
-    color: #d9534f;
-    font-weight: 700;
-}
-
-.today-counter span.num-dark {
-    color: #2f3438;
-    font-weight: 700;
-}
-
-.profile-box {
-    border: 1px solid #d5dade;
-    background: #f8f9fa;
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-}
-
-.brand-title {
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 19px;
-    color: #2b3035;
-    letter-spacing: 0.5px;
-}
-
-.profile-bio {
-    margin-top: 8px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #555b60;
-    text-align: left;
-    padding: 6px 4px 0 4px;
-    border-top: 1px dotted #cfd5d9;
-}
-
-.sidebar-section {
-    border-top: 1px solid #e1e5e8;
-    padding-top: 10px;
-}
-
-.sidebar-section h4 {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #4b85a8;
-    margin-bottom: 8px;
-    letter-spacing: 0.4px;
-}
-
-.buscador {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.buscador select {
-    width: 100%;
-    padding: 6px 8px;
-    border-radius: 4px;
-    border: 1px solid #aeb5ba;
-    background-color: #ffffff;
-    color: #3f4448;
-    font-size: 11.5px;
-    outline: none;
-    cursor: pointer;
-}
-
-.buscador input[type="button"],
-.btn-cyworld {
-    width: 100%;
-    padding: 7px 8px;
-    border-radius: 4px;
-    border: 1px solid #6c757d;
-    background: linear-gradient(180deg, #f8f9fa 0%, #e2e6ea 100%);
-    color: #2f3438;
-    font-weight: 600;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background 0.15s;
-}
-
-.buscador input[type="button"]:hover,
-.btn-cyworld:hover {
-    background: #d8dee3;
-}
-
-.btn-secondary {
-    margin-top: 6px;
-}
-
-/* REDES SOCIALES */
-.pie-derecha h3 {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #4b85a8;
-    margin-bottom: 6px;
-}
-
-.pie-derecha ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.pie-derecha ul li a {
-    text-decoration: none;
-    color: #4f555a;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.pie-derecha ul li a:hover {
-    color: #4b85a8;
-    text-decoration: underline;
-}
-
-/* COLUMNA DERECHA (MINIROOM + CARTELERA) */
-.right-page {
-    flex: 1;
-    background: #ffffff;
-    border: 1px solid #aeb5ba;
-    border-radius: 10px;
-    padding: 16px 20px;
-    position: relative;
-    min-width: 0;
-}
-
-.header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #dce1e5;
-    padding-bottom: 8px;
-    margin-bottom: 14px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.header-bar h1 {
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 18px;
-    color: #2f3438;
-    font-weight: 400;
-}
-
-.fake-url {
-    font-size: 11px;
-    color: #7d858c;
-}
-
-/* RESUMEN SUPERIOR ESTILO CYWORLD */
-.top-summary-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-    font-size: 12px;
-}
-
-.news-list h4,
-.stats-list h4 {
-    font-size: 11px;
-    color: #4b85a8;
-    border-bottom: 1px solid #e6eaed;
-    padding-bottom: 4px;
-    margin-bottom: 6px;
-}
-
-.news-list ul {
-    list-style: none;
-    line-height: 1.65;
-    color: #495057;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 10px;
-    border-top: 1px dotted #cfd5d9;
-    border-bottom: 1px dotted #cfd5d9;
-    padding: 6px 0;
-    font-size: 11.5px;
-}
-
-.stats-grid span.count {
-    color: #4b85a8;
-    font-weight: 600;
-}
-
-/* PESTAÑAS LATERALES GRISES */
-.cyworld-tabs {
-    position: absolute;
-    right: -78px;
-    top: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    z-index: 5;
-}
-
-.cyworld-tabs a {
-    display: block;
-    width: 78px;
-    padding: 8px 6px;
-    background-color: #9da4a9;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 500;
-    text-align: center;
-    border-radius: 0 7px 7px 0;
-    border: 1px solid #7d8489;
-    border-left: none;
-    transition: background 0.15s;
-}
-
-.cyworld-tabs a:hover {
-    background-color: #848c91;
-}
-
-.cyworld-tabs a.active {
-    background-color: #ffffff;
-    color: #2f3438;
-    font-weight: 700;
-    border-color: #aeb5ba;
-    margin-left: -1px;
-}
-
-/* WIDGET LATERAL DERECHO */
-.side-widget {
-    width: 195px;
-    flex-shrink: 0;
-    background-color: #f4f6f7;
-    border: 1px solid #8c9398;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 11px;
-    color: #495057;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.widget-header {
-    font-weight: 700;
-    color: #2f3438;
-    border-bottom: 1px solid #d5dade;
-    padding-bottom: 5px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.widget-header img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-}
-
-.calendar-preview {
-    text-align: center;
-    background: #ffffff;
-    border: 1px solid #d5dade;
-    border-radius: 4px;
-    padding: 8px;
-    margin-bottom: 8px;
-}
-
-.calendar-preview img {
-    max-width: 100%;
-    max-height: 95px;
-    object-fit: contain;
-    margin-bottom: 4px;
-}
-
-.widget-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px dotted #cfd5d9;
-}
-
-.bar-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 10.5px;
-}
-
-.bar-track {
-    width: 95px;
-    height: 6px;
-    background: #dfe3e6;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.bar-fill-orange { width: 80%; height: 100%; background: #e67e22; }
-.bar-fill-green  { width: 65%; height: 100%; background: #6ab04c; }
-.bar-fill-blue   { width: 90%; height: 100%; background: #4b85a8; }
-
-/* SLIDER TIPO MINIROOM */
-.miniroom-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #4b85a8;
-    margin-bottom: 6px;
-}
-
-.imagen-slider {
-    width: 100%;
-    height: 270px;
-    border: 1px solid #c5ccd1;
-    background-color: #f4f6f8;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 18px;
-}
-
-#banners {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagenes-banners {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.b-anterior, .b-siguiente {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    color: #495057;
-    border: 1px solid #aeb5ba;
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.b-anterior { left: 10px; }
-.b-siguiente { right: 10px; }
-
-.b-anterior:hover, .b-siguiente:hover {
-    background: #4b85a8;
-    color: #ffffff;
-}
-
-/* GRILLA DE PELÍCULAS */
-.peliculas h2 {
-    font-size: 14px;
-    color: #4b85a8;
-    border-bottom: 1px solid #dce1e5;
-    padding-bottom: 5px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.peliculas h2 img {
-    width: 16px;
-    height: 16px;
-}
-
-.listapeliculas {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
-    gap: 12px;
-}
-
-.pelicula-info {
-    background: #fafbfc;
-    border: 1px solid #d1d6da;
-    border-radius: 6px;
-    padding: 9px;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.2s;
-}
-
-.pelicula-info:hover {
-    border-color: #4b85a8;
-}
-
-.pelicula-info img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border: 1px solid #dfe3e6;
-    margin-bottom: 7px;
-}
-
-.pelicula-info p:first-of-type {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #2f3438;
-    margin-bottom: 4px;
-    border-bottom: 1px dotted #cfd5d9;
-    padding-bottom: 3px;
-}
-
-.pelicula-info p {
-    font-size: 11px;
-    color: #555b60;
-    line-height: 1.45;
-    margin-bottom: 2px;
-    text-align: left;
-}
-
-/* HORARIOS CON IMAGEN CALENDAR.PNG */
-.horario-box {
-    margin-top: 5px;
-    padding-top: 5px;
-    border-top: 1px dotted #cfd5d9;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #4b85a8;
-}
-
-.horario-box img {
-    width: 15px !important;
-    height: 15px !important;
-    border: none !important;
-    margin: 0 !important;
-    object-fit: contain;
-}
-
-/* =========================================================
-   ESTILOS PARA ENTRADAS.HTML, CUENTA.HTML E INFORMES.HTML
-   ========================================================= */
-
-.cyworld-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: start;
-}
-
-.panel-box {
-    background: #fafbfc;
-    border: 1px solid #cfd5d9;
-    border-radius: 6px;
-    padding: 14px;
-}
-
-.panel-box h3 {
-    font-size: 13px;
-    color: #4b85a8;
-    border-bottom: 1px solid #dce1e5;
-    padding-bottom: 6px;
-    margin-bottom: 12px;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 11.5px;
-    font-weight: 600;
-    color: #495057;
-    margin-bottom: 4px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 6px 8px;
-    border: 1px solid #aeb5ba;
-    border-radius: 4px;
-    font-size: 12px;
-    background: #ffffff;
-    color: #2f3438;
-}
-
-.status-msg {
-    margin-top: 8px;
-    font-size: 11.5px;
-    font-weight: 600;
-    color: #4b85a8;
-}
-
-/* MAPA DE SALA Y RESERVA DE BUTACAS */
-.screen-banner {
-    background: #d5dade;
-    color: #495057;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    padding: 5px;
-    border-radius: 4px;
-    margin-bottom: 14px;
-    border-bottom: 3px solid #8c9398;
-}
-
-.seats-grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 6px;
-    max-width: 340px;
-    margin: 0 auto 14px auto;
-}
-
-.seat {
-    padding: 6px 0;
-    text-align: center;
-    font-size: 10.5px;
-    font-weight: 600;
-    border-radius: 4px 4px 2px 2px;
-    border: 1px solid #9da4a9;
-    background: #ffffff;
-    color: #3f4448;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.15s;
-}
-
-.seat:hover:not(.occupied) {
-    border-color: #4b85a8;
-    background: #eef5f9;
-}
-
-.seat.selected {
-    background: #4b85a8;
-    color: #ffffff;
-    border-color: #356684;
-}
-
-.seat.occupied {
-    background: #cfd5d9;
-    color: #868e96;
-    border-color: #aeb5ba;
-    cursor: not-allowed;
-    text-decoration: line-through;
-}
-
-.seat-legend {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    font-size: 11px;
-    margin-bottom: 6px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.legend-box {
-    width: 12px;
-    height: 12px;
-    border: 1px solid #9da4a9;
-    border-radius: 2px;
-    display: inline-block;
-}
-
-/* TABLAS DE INFORMES DE VENTA Y DISPONIBILIDAD */
-.cyworld-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11.5px;
-    margin-top: 8px;
-}
-
-.cyworld-table th {
-    background: #e9ecef;
-    color: #2f3438;
-    text-align: left;
-    padding: 7px 8px;
-    border: 1px solid #cfd5d9;
-}
-
-.cyworld-table td {
-    padding: 7px 8px;
-    border: 1px solid #dee2e6;
-    color: #495057;
-}
-
-.cyworld-table tr:nth-child(even) {
-    background: #f8f9fa;
-}
-
-.badge-ok {
-    background: #e3f2fd;
-    color: #2c6e9b;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 10.5px;
-}
-
-/* PIE DE PÁGINA INTERNO */
-.pie-mini {
-    margin-top: 20px;
-    padding-top: 8px;
-    border-top: 1px solid #e1e5e8;
-    text-align: center;
-    font-size: 11px;
-    color: #868e96;
-}
-
-/* ADAPTACIÓN RESPONSIVA */
-@media (max-width: 1120px) {
-    .cyworld-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .side-widget {
-        width: 100%;
-    }
-}
-
-@media (max-width: 860px) {
-    .cyworld-dashed {
-        flex-direction: column;
-    }
-    .notebook-rings {
-        display: none;
-    }
-    .left-page {
-        width: 100%;
-    }
-    .cyworld-tabs {
-        position: static;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-    }
-    .cyworld-tabs a {
-        width: auto;
-        border-radius: 5px;
-        border-left: 1px solid #7d8489;
-    }
-}
-
-@media (max-width: 760px) {
-    .cyworld-grid-2 {
-        grid-template-columns: 1fr;
-    }
-}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Velvet Screen | Compra de Entradas y Butacas</title>
+</head>
+
+<body>
+    <div class="cyworld-wrapper">
+        <div class="cyworld-outer">
+            <div class="cyworld-dashed">
+
+                <!-- ANILLOS DE CUADERNO -->
+                <div class="notebook-rings">
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                    <div class="ring-pair"><div class="ring"></div><div class="ring"></div></div>
+                </div>
+
+                <!-- PÁGINA IZQUIERDA -->
+                <aside class="left-page">
+                    <div class="today-counter">
+                        TODAY <span class="num-accent">55</span> | TOTAL <span class="num-dark">2026024</span>
+                    </div>
+
+                    <div class="profile-box">
+                        <div class="brand-title">Velvet Screen ☆</div>
+                        <div class="profile-bio" id="userSessionBox">
+                            Estado: <strong>Invitado</strong> (Iniciá sesión en "Mi Cuenta" para asociar la compra).
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>▶ Disponibilidad por Sala</h4>
+                        <table class="cyworld-table">
+                            <tr><th>Sala</th><th>Libres</th></tr>
+                            <tr><td>Sala 1 (2D)</td><td><span class="badge-ok" id="dispSala1">28 / 32</span></td></tr>
+                            <tr><td>Sala 2 (35mm)</td><td><span class="badge-ok" id="dispSala2">26 / 32</span></td></tr>
+                            <tr><td>Sala 3 (VIP)</td><td><span class="badge-ok" id="dispSala3">30 / 32</span></td></tr>
+                            <tr><td>Sala 4 (2D)</td><td><span class="badge-ok" id="dispSala4">25 / 32</span></td></tr>
+                        </table>
+                    </div>
+
+                    <!-- REDES SOCIALES TAL COMO ESTABAN -->
+                    <div class="sidebar-section pie-derecha">
+                        <h3>Síguenos</h3>
+                        <ul>
+                            <li>
+                                <a href=""><img src="img/icons/Facebook_16px.png"> Facebook</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Instagram_16px.png"> Instagram</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="img/icons/Twitter_16px.png"> Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- PÁGINA DERECHA -->
+                <main class="right-page">
+                    <nav class="cyworld-tabs">
+                        <a href="index.html">Inicio</a>
+                        <a href="Cartelera.html">Cartelera</a>
+                        <a href="Entradas.html" class="active">Entradas</a>
+                        <a href="Cuenta.html">Mi Cuenta</a>
+                        <a href="Informes.html">Informes</a>
+                    </nav>
+
+                    <div class="header-bar">
+                        <h1>Compra de Entradas & Reserva de Butacas ☆</h1>
+                        <span class="fake-url">https://velvetscreen.com.ar/entradas</span>
+                    </div>
+
+                    <div class="cyworld-grid-2">
+                        <!-- SELECCIÓN DE FUNCIÓN -->
+                        <div class="panel-box">
+                            <h3>1. Datos de la Función</h3>
+                            <div class="form-group">
+                                <label>Complejo (CABA Centro)</label>
+                                <select id="selCine">
+                                    <option>Cine Gaumont (Av. Rivadavia 1635, Congreso)</option>
+                                    <option>Cine Lorca (Av. Corrientes 1428, San Nicolás)</option>
+                                    <option>Cinema City General Paz (Av. Cabildo 2702)</option>
+                                    <option>Cine Cosmos UBA (Av. Corrientes 2046)</option>
+                                    <option>Cine Monumental (Lavalle 780, Microcentro)</option>
+                                    <option>Hoyts Abasto (Av. Corrientes 3247)</option>
+                                    <option>Cine Premier (Av. Corrientes 1565)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Película</label>
+                                <select id="selPelicula" onchange="renderSeats()">
+                                    <option value="El niño pez|Sala 1">El niño pez (Sala 1)</option>
+                                    <option value="Silvia Prieto|Sala 2">Silvia Prieto (Sala 2)</option>
+                                    <option value="Wakolda|Sala 3">Wakolda (Sala 3)</option>
+                                    <option value="Tan de repente|Sala 1">Tan de repente (Sala 1)</option>
+                                    <option value="El ángel|Sala 4">El ángel (Sala 4)</option>
+                                    <option value="La niña santa|Sala 2">La niña santa (Sala 2)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Horario</label>
+                                <select id="selHorario" onchange="renderSeats()">
+                                    <option>16:30 hs</option>
+                                    <option>19:15 hs</option>
+                                    <option>22:00 hs</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Resumen de Reserva</label>
+                                <div id="resumenCompra" style="font-size:12px; color:#3f4448; background:#fff; padding:8px; border:1px solid #cfd5d9; border-radius:4px;">
+                                    Butacas seleccionadas: <strong>Ninguna</strong><br>
+                                    Total ($4.500 c/u): <strong>$0</strong>
+                                </div>
+                            </div>
+                            <button class="btn-cyworld" onclick="confirmarCompra()">Confirmar Compra y Reservar</button>
+                            <div class="status-msg" id="msgCompra"></div>
+                        </div>
+
+                        <!-- MAPA DE BUTACAS -->
+                        <div class="panel-box">
+                            <h3>2. Seleccioná tus Butacas</h3>
+                            <div class="screen-banner">PANTALLA</div>
+                            <div class="seats-grid" id="seatsGrid"></div>
+                            <div class="seat-legend">
+                                <span class="legend-item"><span class="legend-box" style="background:#fff;"></span> Libre</span>
+                                <span class="legend-item"><span class="legend-box" style="background:#4b85a8;"></span> Elegida</span>
+                                <span class="legend-item"><span class="legend-box" style="background:#cfd5d9;"></span> Ocupada</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="pie-mini">
+                        Proyecto de Base de Datos — Velvet Screen © 2026
+                    </footer>
+                </main>
+            </div>
+        </div>
+
+        <!-- WIDGET LATERAL DERECHO CON CALENDAR.PNG -->
+        <aside class="side-widget">
+            <div class="widget-header">
+                <img src="img/calendar.png" alt="Calendario"> Agenda & Horarios
+            </div>
+            <div class="calendar-preview">
+                <img src="img/calendar.png" alt="Calendario de funciones">
+                <div><strong>Noviembre 2026</strong></div>
+                <div>Reserva online sin cargo</div>
+            </div>
+            <button class="btn-cyworld" onclick="location.href='Informes.html'">Ver informes</button>
+        </aside>
+    </div>
+
+    <script>
+        const PRECIO_ENTRADA = 4500;
+        let selectedSeats = [];
+
+        const activeUser = JSON.parse(localStorage.getItem('vs_active_user'));
+        if (activeUser) {
+            document.getElementById('userSessionBox').innerHTML =
+                `Usuario: <strong>${activeUser.nombre}</strong><br>Email: ${activeUser.email}`;
+        }
+
+        function getStorageKey() {
+            const peli = document.getElementById('selPelicula').value;
+            const hora = document.getElementById('selHorario').value;
+            return `vs_seats_${peli}_${hora}`;
+        }
+
+        function renderSeats() {
+            selectedSeats = [];
+            const grid = document.getElementById('seatsGrid');
+            grid.innerHTML = '';
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+
+            const rows = ['A', 'B', 'C', 'D'];
+            rows.forEach(row => {
+                for (let col = 1; col <= 8; col++) {
+                    const id = row + col;
+                    const div = document.createElement('div');
+                    div.className = 'seat' + (occupied.includes(id) ? ' occupied' : '');
+                    div.textContent = id;
+                    if (!occupied.includes(id)) {
+                        div.onclick = () => toggleSeat(id, div);
+                    }
+                    grid.appendChild(div);
+                }
+            });
+            updateResumen();
+            updateDisponibilidad();
+        }
+
+        function toggleSeat(id, el) {
+            if (selectedSeats.includes(id)) {
+                selectedSeats = selectedSeats.filter(s => s !== id);
+                el.classList.remove('selected');
+            } else {
+                selectedSeats.push(id);
+                el.classList.add('selected');
+            }
+            updateResumen();
+        }
+
+        function updateResumen() {
+            const total = selectedSeats.length * PRECIO_ENTRADA;
+            document.getElementById('resumenCompra').innerHTML =
+                `Butacas seleccionadas: <strong>${selectedSeats.length ? selectedSeats.join(', ') : 'Ninguna'}</strong><br>` +
+                `Total ($4.500 c/u): <strong>$${total.toLocaleString('es-AR')}</strong>`;
+        }
+
+        function updateDisponibilidad() {
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+            const libres = 32 - occupied.length;
+            const sala = document.getElementById('selPelicula').value.split('|')[1];
+            if (sala === 'Sala 1') document.getElementById('dispSala1').textContent = `${libres} / 32`;
+            if (sala === 'Sala 2') document.getElementById('dispSala2').textContent = `${libres} / 32`;
+            if (sala === 'Sala 3') document.getElementById('dispSala3').textContent = `${libres} / 32`;
+            if (sala === 'Sala 4') document.getElementById('dispSala4').textContent = `${libres} / 32`;
+        }
+
+        function confirmarCompra() {
+            if (selectedSeats.length === 0) {
+                document.getElementById('msgCompra').textContent = 'Seleccioná al menos una butaca.';
+                return;
+            }
+            const key = getStorageKey();
+            const occupied = JSON.parse(localStorage.getItem(key)) || ['A3', 'A4', 'B5', 'C2'];
+            const updated = [...occupied, ...selectedSeats];
+            localStorage.setItem(key, JSON.stringify(updated));
+
+            const ventas = JSON.parse(localStorage.getItem('vs_ventas')) || [];
+            const [pelicula, sala] = document.getElementById('selPelicula').value.split('|');
+            ventas.push({
+                fecha: new Date().toLocaleDateString('es-AR'),
+                cliente: activeUser ? activeUser.nombre : 'Invitado',
+                cine: document.getElementById('selCine').value,
+                pelicula: pelicula,
+                sala: sala,
+                butacas: selectedSeats.join(', '),
+                cantidad: selectedSeats.length,
+                total: selectedSeats.length * PRECIO_ENTRADA
+            });
+            localStorage.setItem('vs_ventas', JSON.stringify(ventas));
+
+            document.getElementById('msgCompra').textContent =
+                `¡Compra registrada! Butacas ${selectedSeats.join(', ')} reservadas.`;
+            renderSeats();
+        }
+
+        renderSeats();
+    </script>
+</body>
+
+</html>
