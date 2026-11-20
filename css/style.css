@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* LAYOUT GENERAL (LIBRETA + WIDGET LATERAL OPCIONAL) */
+/* LAYOUT GENERAL (LIBRETA + WIDGET LATERAL) */
 .cyworld-wrapper {
     max-width: 1180px;
     margin: 0 auto;
@@ -27,7 +27,7 @@ body {
     gap: 105px;
 }
 
-/* CONTENEDOR EXTERIOR DE LA LIBRETA (ESTILO KIIIKIII) */
+/* CONTENEDOR EXTERIOR DE LA LIBRETA */
 .cyworld-outer {
     flex: 1;
     background-color: #e2e6e8;
@@ -171,7 +171,7 @@ body {
 .buscador input[type="button"],
 .btn-cyworld {
     width: 100%;
-    padding: 6px 8px;
+    padding: 7px 8px;
     border-radius: 4px;
     border: 1px solid #6c757d;
     background: linear-gradient(180deg, #f8f9fa 0%, #e2e6ea 100%);
@@ -191,7 +191,7 @@ body {
     margin-top: 6px;
 }
 
-/* REDES SOCIALES (ESTRUCTURA ORIGINAL MANTENIDA) */
+/* REDES SOCIALES */
 .pie-derecha h3 {
     font-size: 11px;
     font-weight: 700;
@@ -238,7 +238,7 @@ body {
     align-items: center;
     border-bottom: 1px solid #dce1e5;
     padding-bottom: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     flex-wrap: wrap;
     gap: 8px;
 }
@@ -294,7 +294,7 @@ body {
     font-weight: 600;
 }
 
-/* PESTAÑAS LATERALES GRISES (COMO LA REFERENCIA) */
+/* PESTAÑAS LATERALES GRISES */
 .cyworld-tabs {
     position: absolute;
     right: -78px;
@@ -333,7 +333,7 @@ body {
     margin-left: -1px;
 }
 
-/* WIDGET LATERAL DERECHO (CON TU IMAGEN CALENDAR.PNG) */
+/* WIDGET LATERAL DERECHO */
 .side-widget {
     width: 195px;
     flex-shrink: 0;
@@ -543,52 +543,15 @@ body {
     object-fit: contain;
 }
 
-/* PIE DE PÁGINA INTERNO */
-.pie-mini {
-    margin-top: 20px;
-    padding-top: 8px;
-    border-top: 1px solid #e1e5e8;
-    text-align: center;
-    font-size: 11px;
-    color: #868e96;
-}
+/* =========================================================
+   ESTILOS PARA ENTRADAS.HTML, CUENTA.HTML E INFORMES.HTML
+   ========================================================= */
 
-@media (max-width: 1120px) {
-    .cyworld-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .side-widget {
-        width: 100%;
-    }
-}
-
-@media (max-width: 860px) {
-    .cyworld-dashed {
-        flex-direction: column;
-    }
-    .notebook-rings {
-        display: none;
-    }
-    .left-page {
-        width: 100%;
-    }
-    .cyworld-tabs {
-        position: static;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-    }
-    .cyworld-tabs a {
-        width: auto;
-        border-radius: 5px;
-        border-left: 1px solid #7d8489;
-    }
-    /* FORMULARIOS (LOGIN / REGISTRO / COMPRA) */
 .cyworld-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    align-items: start;
 }
 
 .panel-box {
@@ -655,7 +618,7 @@ body {
     grid-template-columns: repeat(8, 1fr);
     gap: 6px;
     max-width: 340px;
-    margin: 0 auto 12px auto;
+    margin: 0 auto 14px auto;
 }
 
 .seat {
@@ -669,10 +632,12 @@ body {
     color: #3f4448;
     cursor: pointer;
     user-select: none;
+    transition: all 0.15s;
 }
 
 .seat:hover:not(.occupied) {
     border-color: #4b85a8;
+    background: #eef5f9;
 }
 
 .seat.selected {
@@ -694,7 +659,7 @@ body {
     justify-content: center;
     gap: 14px;
     font-size: 11px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .legend-item {
@@ -744,6 +709,50 @@ body {
     border-radius: 4px;
     font-weight: 600;
     font-size: 10.5px;
+}
+
+/* PIE DE PÁGINA INTERNO */
+.pie-mini {
+    margin-top: 20px;
+    padding-top: 8px;
+    border-top: 1px solid #e1e5e8;
+    text-align: center;
+    font-size: 11px;
+    color: #868e96;
+}
+
+/* ADAPTACIÓN RESPONSIVA */
+@media (max-width: 1120px) {
+    .cyworld-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .side-widget {
+        width: 100%;
+    }
+}
+
+@media (max-width: 860px) {
+    .cyworld-dashed {
+        flex-direction: column;
+    }
+    .notebook-rings {
+        display: none;
+    }
+    .left-page {
+        width: 100%;
+    }
+    .cyworld-tabs {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+    }
+    .cyworld-tabs a {
+        width: auto;
+        border-radius: 5px;
+        border-left: 1px solid #7d8489;
+    }
 }
 
 @media (max-width: 760px) {
