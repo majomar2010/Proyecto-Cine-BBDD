@@ -306,4 +306,4 @@ El desarrollo del sistema de gestión para el complejo de cines es viable por la
 
 # **6\. Documento Final y Producto**
 
-!La estas viendo aca y ahora!
+¡La estas viendo aca y ahora!
